@@ -1,26 +1,153 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --tinta: #3c4257;
+  --tinta-titulo: #0a2540;
+  --tinta-suave: #5f7186;
+  --borde: #e3e8ee;
+  --fondo: #f6f9fc;
+  --papel: #ffffff;
+
+  --oro-300: #eed396;
+  --oro-400: #e7c16a;
+  --oro-700: #80672d;
+  --oro-800: #624f22;
+
+  --acento: #80672d;
+  --acento-hover: #624f22;
+
+  --sombra: 0 0 0 1px rgba(50, 50, 93, 0.025), 0 2px 5px -1px rgba(50, 50, 93, 0.09),
+    0 1px 3px -1px rgba(0, 0, 0, 0.06);
+  --sombra-alta: 0 0 0 1px rgba(50, 50, 93, 0.03), 0 6px 14px -2px rgba(50, 50, 93, 0.12),
+    0 3px 6px -2px rgba(0, 0, 0, 0.07);
+
+  --curva: cubic-bezier(0.32, 0.72, 0, 1);
+  --rapido: 180ms;
+  --medio: 280ms;
+
+  --r-medio: 10px;
+  --r-grande: 14px;
+  --r-pastilla: 999px;
+
+  --rotulo: var(--font-rotulo), "Segoe UI Semibold", Tahoma, sans-serif;
+  --texto: var(--font-texto), "Segoe UI", Roboto, sans-serif;
+  --dato: var(--font-dato), "Consolas", "Cascadia Mono", monospace;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+* {
+  box-sizing: border-box;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  font-family: var(--texto);
+  font-size: 16px;
+  line-height: 1.65;
+  color: var(--tinta);
+  background: var(--fondo);
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: var(--acento);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color var(--rapido) var(--curva), opacity var(--rapido) var(--curva);
+}
+
+a:hover {
+  color: var(--acento-hover);
+}
+
+a:active {
+  opacity: 0.6;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--rotulo);
+  color: var(--tinta-titulo);
+  letter-spacing: -0.01em;
+}
+
+.contenedor {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.tarjeta {
+  background: var(--papel);
+  border-radius: var(--r-grande);
+  box-shadow: var(--sombra);
+  transition: box-shadow var(--rapido) var(--curva), transform var(--rapido) var(--curva);
+}
+
+.tarjeta:hover {
+  box-shadow: var(--sombra-alta);
+  transform: translateY(-2px);
+}
+
+.boton {
+  font-family: var(--texto);
+  font-size: 14px;
+  font-weight: 600;
+  padding: 10px 20px;
+  border-radius: var(--r-medio);
+  border: none;
+  background: var(--tinta-titulo);
+  color: #fff;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: var(--sombra);
+  transition: background var(--rapido) var(--curva), box-shadow var(--rapido) var(--curva),
+    transform var(--rapido) var(--curva);
+}
+
+.boton:hover {
+  background: #123458;
+  box-shadow: var(--sombra-alta);
+  transform: translateY(-1px);
+  color: #fff;
+}
+
+.boton:active {
+  transform: scale(0.96);
+  transition-duration: 90ms;
+}
+
+.boton.secundario {
+  background: var(--papel);
+  color: var(--tinta-titulo);
+  border: 1px solid var(--borde);
+  box-shadow: none;
+}
+
+.boton.secundario:hover {
+  border-color: var(--oro-700);
+  color: var(--oro-700);
+  background: var(--papel);
+  box-shadow: none;
+}
+
+.dato {
+  font-family: var(--dato);
+  font-variant-numeric: tabular-nums;
+}
+
+.tenue {
+  color: var(--tinta-suave);
+}
+
+::selection {
+  background: var(--oro-300);
+  color: var(--tinta-titulo);
 }
