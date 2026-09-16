@@ -4,19 +4,10 @@ import { proyectos } from "../datos";
 import { diccionario } from "../i18n/diccionario";
 import { t, useIdioma } from "../i18n/contexto";
 import Reveal from "./Reveal";
-
-function Marcador({ emoji }: { emoji: string }) {
-  return (
-    <div
-      className="w-full h-full flex items-center justify-center"
-      style={{ background: "var(--fondo)", border: "1px solid var(--borde)" }}
-    >
-      <span style={{ fontSize: "48px" }} aria-hidden>
-        {emoji}
-      </span>
-    </div>
-  );
-}
+import ArchivadorServidor from "./iconos/ArchivadorServidor";
+import ReciboEscaneado from "./iconos/ReciboEscaneado";
+import Candado from "./iconos/Candado";
+import GrafoNodos from "./iconos/GrafoNodos";
 
 export default function PlataformasWeb() {
   const { idioma } = useIdioma();
@@ -56,7 +47,7 @@ export default function PlataformasWeb() {
                     boxShadow: "var(--sombra)",
                   }}
                 >
-                  <Marcador emoji={p.id === "gestion-ph" ? "🏢" : "👟"} />
+                  {p.id === "gestion-ph" ? <ArchivadorServidor /> : <ReciboEscaneado />}
                 </div>
                 <div className="flex-1">
                   <h3 className="text-lg font-semibold mb-2" style={{ color: "var(--tinta-titulo)" }}>
@@ -66,19 +57,31 @@ export default function PlataformasWeb() {
                     {t(p.descripcion, idioma)}
                   </p>
                   <div className="flex flex-wrap gap-3 items-center">
-                    <p className="dato text-[11px] tenue">
-                      {p.stack.map((s) => t(s, idioma)).join("  ·  ")}
+                    <p className="dato text-[11px] tenue flex flex-wrap items-center gap-x-1">
+                      {p.stack.map((s, si) => {
+                        const texto = t(s, idioma);
+                        return (
+                          <span key={si} className="inline-flex items-center gap-1">
+                            {si > 0 && <span aria-hidden>·</span>}
+                            {texto}
+                            {texto === "n8n" && <GrafoNodos />}
+                          </span>
+                        );
+                      })}
                     </p>
                     {p.estado && (
-                      <span
-                        className="dato text-[11px] px-2.5 py-0.5 rounded-full"
-                        style={{
-                          background: "var(--fondo)",
-                          color: "var(--acento)",
-                          border: "1px solid var(--borde)",
-                        }}
-                      >
-                        {t(p.estado, idioma)}
+                      <span className="inline-flex items-center gap-1.5">
+                        <span
+                          className="dato text-[11px] px-2.5 py-0.5 rounded-full"
+                          style={{
+                            background: "var(--fondo)",
+                            color: "var(--acento)",
+                            border: "1px solid var(--borde)",
+                          }}
+                        >
+                          {t(p.estado, idioma)}
+                        </span>
+                        {p.id === "fl-shoes" && <Candado />}
                       </span>
                     )}
                   </div>

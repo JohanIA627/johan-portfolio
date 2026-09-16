@@ -5,6 +5,8 @@ import { diccionario } from "../i18n/diccionario";
 import { t, useIdioma } from "../i18n/contexto";
 import ModelViewer from "./ModelViewer";
 import Reveal from "./Reveal";
+import MotorreductorSinfin from "./iconos/MotorreductorSinfin";
+import CircuitoCIP from "./iconos/CircuitoCIP";
 
 export default function ProyectosIngenieria() {
   const { idioma } = useIdioma();
@@ -35,10 +37,11 @@ export default function ProyectosIngenieria() {
                 </p>
                 <div className="flex flex-wrap items-start justify-between gap-2 mt-3 mb-1">
                   <h3
-                    className="text-lg font-semibold flex-1 min-w-[60%]"
+                    className="text-lg font-semibold flex-1 min-w-[60%] inline-flex items-center gap-2"
                     style={{ color: "var(--tinta-titulo)" }}
                   >
                     {t(p.titulo, idioma)}
+                    {p.id === "dosificadora-indunilo" && <MotorreductorSinfin />}
                   </h3>
                   {p.estado && (
                     <span
@@ -54,7 +57,8 @@ export default function ProyectosIngenieria() {
                   )}
                 </div>
                 <p className="tenue text-sm mb-3">{t(p.contexto, idioma)}</p>
-                <p className="text-sm mb-4" style={{ color: "var(--tinta)" }}>
+                {p.id === "cip-indulacteos" && <CircuitoCIP />}
+                <p className="text-sm mb-4 mt-2" style={{ color: "var(--tinta)" }}>
                   {t(p.descripcion, idioma)}
                 </p>
                 <p className="dato text-[11px] tenue">

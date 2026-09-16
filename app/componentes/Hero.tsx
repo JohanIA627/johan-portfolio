@@ -6,6 +6,8 @@ import { diccionario } from "../i18n/diccionario";
 import { t, useIdioma } from "../i18n/contexto";
 import { experiencias } from "../datos";
 import { RevealGrupo, RevealItem } from "./RevealGrupo";
+import VerificacionHumana from "./iconos/VerificacionHumana";
+import HallazgoConsumibles from "./iconos/HallazgoConsumibles";
 
 const CURVA = [0.32, 0.72, 0, 1] as const;
 
@@ -110,7 +112,9 @@ export default function Hero() {
             <p className="mb-4">{t(h.bio1, idioma)}</p>
           </RevealItem>
           <RevealItem as="div">
-            <p className="mb-2">{t(h.bio2, idioma)}</p>
+            <p className="mb-2">
+              {t(h.bio2, idioma)} <VerificacionHumana />
+            </p>
           </RevealItem>
           <RevealItem as="div">
             <p className="dato text-xs tenue">{HERRAMIENTAS.join("  ·  ")}</p>
@@ -132,8 +136,9 @@ export default function Hero() {
                     {exp.emoji && <span aria-hidden>{exp.emoji} </span>}
                     {t(exp.rol, idioma)} · {exp.empresa}
                   </p>
-                  <p className="text-sm mt-1" style={{ color: "var(--tinta)" }}>
-                    {t(exp.descripcion, idioma)}
+                  <p className="text-sm mt-1 flex items-start gap-2" style={{ color: "var(--tinta)" }}>
+                    <span>{t(exp.descripcion, idioma)}</span>
+                    {exp.empresa === "DSM Latinoamérica" && <HallazgoConsumibles />}
                   </p>
                 </div>
               </RevealItem>
