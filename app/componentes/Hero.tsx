@@ -28,18 +28,18 @@ export default function Hero() {
   const h = diccionario.hero;
 
   return (
-    <section id="home" className="pt-16 pb-14 md:pt-24 md:pb-20 overflow-x-clip">
+    <section id="home" className="pt-6 pb-14 md:pt-10 md:pb-20 overflow-x-clip">
       <div className="contenedor flex flex-col items-center text-center">
         <motion.div
           initial={{ opacity: 0, scale: 0.82 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true, amount: 0 }}
           transition={{ duration: 0.8, ease: CURVA }}
-          className="relative mx-auto w-[272px] h-[272px] sm:w-[348px] sm:h-[348px] md:w-[430px] md:h-[430px] lg:w-[512px] lg:h-[512px]"
+          className="relative mx-auto w-[228px] h-[228px] sm:w-[290px] sm:h-[290px] md:w-[358px] md:h-[358px] lg:w-[428px] lg:h-[428px]"
         >
           <div className="absolute inset-0 flex items-center justify-center">
             <div
-              className="rounded-full overflow-hidden w-[200px] h-[200px] sm:w-[260px] sm:h-[260px] md:w-[330px] md:h-[330px] lg:w-[396px] lg:h-[396px]"
+              className="rounded-full overflow-hidden w-[168px] h-[168px] sm:w-[216px] sm:h-[216px] md:w-[276px] md:h-[276px] lg:w-[330px] lg:h-[330px]"
               style={{
                 boxShadow: "var(--sombra-alta)",
                 border: "4px solid var(--papel)",
@@ -48,8 +48,8 @@ export default function Hero() {
               <Image
                 src="/foto-johan.jpg"
                 alt={t(h.nombre, idioma)}
-                width={396}
-                height={396}
+                width={330}
+                height={330}
                 className="object-cover w-full h-full"
                 priority
               />
@@ -57,21 +57,23 @@ export default function Hero() {
           </div>
 
           <span
-            className="absolute top-0 left-0 font-bold leading-none text-left"
+            className="absolute top-0 left-0 leading-tight text-left"
             style={{
               color: "var(--tinta-titulo)",
-              fontSize: "clamp(0.85rem, 3vw, 1.5rem)",
-              maxWidth: "min(160px, 42%)",
+              fontFamily: "var(--font-firma), cursive",
+              fontSize: "clamp(1.3rem, 4.5vw, 2.2rem)",
+              maxWidth: "min(170px, 46%)",
             }}
           >
             {t(h.nombreCorto, idioma)}
           </span>
           <span
-            className="absolute bottom-0 right-0 font-bold leading-none text-right"
+            className="absolute bottom-0 right-0 leading-tight text-right"
             style={{
               color: "var(--acento)",
-              fontSize: "clamp(0.8rem, 2.6vw, 1.3rem)",
-              maxWidth: "min(150px, 40%)",
+              fontFamily: "var(--font-firma), cursive",
+              fontSize: "clamp(1.2rem, 4vw, 2rem)",
+              maxWidth: "min(160px, 44%)",
             }}
           >
             {t(h.carrera, idioma)}

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Inter, Yellowtail } from "next/font/google";
 import { ProveedorIdioma } from "./i18n/contexto";
 import ProveedorMovimiento from "./componentes/ProveedorMovimiento";
 import "./globals.css";
@@ -10,6 +10,12 @@ const inter = Inter({
   weight: ["400", "500", "600", "700"],
 });
 
+const yellowtail = Yellowtail({
+  variable: "--font-firma",
+  subsets: ["latin"],
+  weight: ["400"],
+});
+
 export const metadata: Metadata = {
   title: "Johan Sebastián Rondón — Portafolio",
   description:
@@ -18,7 +24,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="es" className={`${inter.variable} h-full antialiased`}>
+    <html lang="es" className={`${inter.variable} ${yellowtail.variable} h-full antialiased`}>
       <body className="min-h-full flex flex-col">
         <ProveedorMovimiento>
           <ProveedorIdioma>{children}</ProveedorIdioma>
