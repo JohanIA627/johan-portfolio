@@ -24,7 +24,7 @@ const ROTACION_GRADOS = (RECORRIDO / RADIO) * (180 / Math.PI);
 const DIENTES_ENGRANAJE = 8;
 const RADIO_CUERPO = RADIO - 6;
 const RADIO_AGUJERO = 5;
-const COLOR_PANEL = "var(--tinta-titulo)";
+const COLOR_PANEL = "var(--fondo)";
 const COLOR_CREMALLERA = "var(--tinta-suave)";
 const COLOR_ENGRANAJE = "var(--acento)";
 
@@ -113,6 +113,7 @@ export default function ToggleIdioma({
           width: ANCHO,
           height: ALTO,
           background: COLOR_PANEL,
+          border: "1px solid var(--borde)",
         }}
       >
         <Cremallera />
