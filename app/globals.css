@@ -1,20 +1,23 @@
 @import "tailwindcss";
 
 :root {
-  --tinta: #3c4257;
-  --tinta-titulo: #0a2540;
-  --tinta-suave: #5f7186;
-  --borde: #e3e8ee;
-  --fondo: #f6f9fc;
+  /* Paleta: negro/gris/blanco + un solo acento en azul cielo — nada de
+     navy corporativo ni de índigo/violeta genérico de plantilla. */
+  --tinta: #33383f;
+  --tinta-titulo: #14171b;
+  --tinta-suave: #5b6472; /* 5.98:1 sobre blanco */
+  --negro-suave: #23272d;
+  --borde: #e2e5ea;
+  --fondo: #f6f8fb;
   --papel: #ffffff;
 
-  --oro-300: #eed396;
-  --oro-400: #e7c16a;
-  --oro-700: #80672d;
-  --oro-800: #624f22;
+  --azul-300: #8fc4ef;
+  --azul-400: #2f8fe0;
+  --azul-700: #0b72c9; /* 4.93:1 sobre blanco */
+  --azul-800: #0a5091; /* 8.18:1 sobre blanco */
 
-  --acento: #80672d;
-  --acento-hover: #624f22;
+  --acento: var(--azul-700);
+  --acento-hover: var(--azul-800);
 
   --sombra: 0 0 0 1px rgba(50, 50, 93, 0.025), 0 2px 5px -1px rgba(50, 50, 93, 0.09),
     0 1px 3px -1px rgba(0, 0, 0, 0.06);
@@ -29,9 +32,9 @@
   --r-grande: 14px;
   --r-pastilla: 999px;
 
-  --rotulo: var(--font-rotulo), "Segoe UI Semibold", Tahoma, sans-serif;
-  --texto: var(--font-texto), "Segoe UI", Roboto, sans-serif;
-  --dato: var(--font-dato), "Consolas", "Cascadia Mono", monospace;
+  --rotulo: var(--font-inter), "Segoe UI Semibold", Tahoma, sans-serif;
+  --texto: var(--font-inter), "Segoe UI", Roboto, sans-serif;
+  --dato: var(--font-inter), "Segoe UI", Roboto, sans-serif;
 }
 
 * {
@@ -113,7 +116,7 @@ h3 {
 }
 
 .boton:hover {
-  background: #123458;
+  background: var(--negro-suave);
   box-shadow: var(--sombra-alta);
   transform: translateY(-1px);
   color: #fff;
@@ -132,8 +135,8 @@ h3 {
 }
 
 .boton.secundario:hover {
-  border-color: var(--oro-700);
-  color: var(--oro-700);
+  border-color: var(--acento);
+  color: var(--acento);
   background: var(--papel);
   box-shadow: none;
 }
@@ -141,6 +144,7 @@ h3 {
 .dato {
   font-family: var(--dato);
   font-variant-numeric: tabular-nums;
+  font-feature-settings: "tnum" 1;
 }
 
 .tenue {
@@ -148,6 +152,30 @@ h3 {
 }
 
 ::selection {
-  background: var(--oro-300);
+  background: var(--azul-300);
   color: var(--tinta-titulo);
+}
+
+.boton-idioma {
+  transition: background var(--rapido) var(--curva), color var(--rapido) var(--curva),
+    transform var(--rapido) var(--curva);
+}
+
+.boton-idioma:active {
+  transform: scale(0.9);
+  transition-duration: 90ms;
+}
+
+/* Movimiento que se puede apagar: obligatorio, no opcional — hay gente a la
+   que el scroll-reveal y las transiciones le producen mareo. Cubre las
+   transiciones CSS de aquí; las animaciones de `motion` las apaga por su
+   lado `MotionConfig` en `app/layout.tsx`. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
