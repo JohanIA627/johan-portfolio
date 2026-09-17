@@ -61,6 +61,7 @@ export default function Hero() {
             style={{
               color: "var(--tinta-titulo)",
               fontFamily: "var(--font-firma), cursive",
+              fontWeight: 700,
               fontSize: "clamp(1.3rem, 4.5vw, 2.2rem)",
               maxWidth: "min(170px, 46%)",
             }}
@@ -72,6 +73,7 @@ export default function Hero() {
             style={{
               color: "var(--acento)",
               fontFamily: "var(--font-firma), cursive",
+              fontWeight: 700,
               fontSize: "clamp(1.2rem, 4vw, 2rem)",
               maxWidth: "min(160px, 44%)",
             }}
