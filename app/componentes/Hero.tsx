@@ -64,6 +64,8 @@ export default function Hero() {
               fontWeight: 700,
               fontSize: "clamp(1.3rem, 4.5vw, 2.2rem)",
               maxWidth: "min(170px, 46%)",
+              transform: "rotate(-16deg)",
+              transformOrigin: "top left",
             }}
           >
             {t(h.nombreCorto, idioma)}
@@ -76,6 +78,8 @@ export default function Hero() {
               fontWeight: 700,
               fontSize: "clamp(1.2rem, 4vw, 2rem)",
               maxWidth: "min(160px, 44%)",
+              transform: "rotate(-16deg)",
+              transformOrigin: "bottom right",
             }}
           >
             {t(h.carrera, idioma)}
