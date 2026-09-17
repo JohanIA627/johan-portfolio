@@ -19,10 +19,14 @@
   --acento: var(--azul-700);
   --acento-hover: var(--azul-800);
 
-  /* Único acento fuera de la paleta azul/negro/gris: amarillo de seguridad
-     industrial, exclusivo para el casco/chaleco de la mascota (pedido
-     explícito de Johan). No usar en ningún otro elemento. */
+  /* Únicos acentos fuera de la paleta azul/negro/gris, exclusivos de la
+     mascota (pedido explícito de Johan): amarillo de seguridad industrial
+     para el casco/chaleco, y el naranja real de "Clawd" (la mascota no
+     oficial de Claude Code, #DA7758) para el cuerpo. No usar en ningún
+     otro elemento del sitio. */
   --amarillo-casco: #f4c430;
+  --naranja-clawd: #da7758;
+  --naranja-clawd-claro: #f0af98;
 
   --sombra: 0 0 0 1px rgba(50, 50, 93, 0.025), 0 2px 5px -1px rgba(50, 50, 93, 0.09),
     0 1px 3px -1px rgba(0, 0, 0, 0.06);
