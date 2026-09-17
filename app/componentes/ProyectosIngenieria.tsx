@@ -18,7 +18,7 @@ export default function ProyectosIngenieria() {
     <section id="proyectos-ingenieria" className="py-14 md:py-20">
       <div className="contenedor relative">
         <Reveal>
-          <h2 className="text-2xl font-bold mb-2">
+          <h2 className="text-2xl font-bold mb-2" style={{ fontFamily: "var(--font-firma), cursive" }}>
             <span aria-hidden>⚙️ </span>
             {t(d.titulo, idioma)}
           </h2>
@@ -26,7 +26,7 @@ export default function ProyectosIngenieria() {
         </Reveal>
         <Ingeniero
           pose="plano"
-          className="hidden md:block absolute top-0 right-0 w-24 h-28"
+          className="hidden md:block absolute top-0 right-0 w-[144px] h-[168px]"
         />
         <div className="grid md:grid-cols-2 gap-6">
           {proyectosIngenieria.map((p, i) => (

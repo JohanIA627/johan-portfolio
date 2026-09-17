@@ -30,9 +30,10 @@ export default function Ingeniero({ pose, className }: Props) {
     >
       {pose === "engranaje" && <Engranaje />}
 
-      {/* Piernas — únicas que se balancean, pedido explícito para el Hero */}
+      {/* Piernas — bloques cortos y rectos, únicas que se balancean (pedido
+          explícito para el Hero) */}
       <motion.g
-        style={{ transformOrigin: "42px 86px" }}
+        style={{ transformOrigin: "42px 90px" }}
         animate={
           pose === "engranaje"
             ? { rotate: [10, -6, 10] }
@@ -40,10 +41,10 @@ export default function Ingeniero({ pose, className }: Props) {
         }
         transition={{ duration: 2.4, repeat: Infinity, ease: "easeInOut" }}
       >
-        <rect x={36} y={86} width={10} height={26} rx={5} fill={colorCuerpo} stroke={colorTrazo} strokeWidth={1.2} />
+        <rect x={36} y={90} width={10} height={22} rx={3} fill={colorCuerpo} stroke={colorTrazo} strokeWidth={1.2} />
       </motion.g>
       <motion.g
-        style={{ transformOrigin: "58px 86px" }}
+        style={{ transformOrigin: "58px 90px" }}
         animate={
           pose === "engranaje"
             ? { rotate: [-8, 9, -8] }
@@ -51,11 +52,13 @@ export default function Ingeniero({ pose, className }: Props) {
         }
         transition={{ duration: 2.4, repeat: Infinity, ease: "easeInOut", delay: 0.25 }}
       >
-        <rect x={54} y={86} width={10} height={26} rx={5} fill={colorCuerpo} stroke={colorTrazo} strokeWidth={1.2} />
+        <rect x={54} y={90} width={10} height={22} rx={3} fill={colorCuerpo} stroke={colorTrazo} strokeWidth={1.2} />
       </motion.g>
 
-      {/* Torso + chaleco */}
-      <rect x={32} y={46} width={36} height={40} rx={14} fill={colorCuerpo} stroke={colorTrazo} strokeWidth={1.4} />
+      {/* Torso en bloque + chaleco */}
+      <rect x={32} y={46} width={36} height={40} rx={10} fill={colorCuerpo} stroke={colorTrazo} strokeWidth={1.4} />
+      {/* Cara lateral del bloque — sombra sutil que da el efecto "juguete 3D" */}
+      <rect x={57} y={47} width={9} height={38} rx={4} fill={colorTrazo} opacity={0.14} />
       <rect
         x={35}
         y={58}
@@ -71,10 +74,11 @@ export default function Ingeniero({ pose, className }: Props) {
       <BrazoIzquierdo pose={pose} color={colorCuerpo} trazo={colorTrazo} />
       <BrazoDerecho pose={pose} color={colorCuerpo} trazo={colorTrazo} />
 
-      {/* Cabeza */}
-      <circle cx={50} cy={30} r={14} fill={colorCabeza} stroke={colorTrazo} strokeWidth={1.4} />
-      <circle cx={44} cy={30} r={2} fill={colorTrazo} />
-      <circle cx={56} cy={30} r={2} fill={colorTrazo} />
+      {/* Cabeza en bloque, ojos rectangulares — estilo juguete geométrico */}
+      <rect x={36} y={16} width={28} height={28} rx={8} fill={colorCabeza} stroke={colorTrazo} strokeWidth={1.4} />
+      <rect x={58} y={17} width={5.5} height={26} rx={2.5} fill={colorTrazo} opacity={0.14} />
+      <rect x={41} y={27} width={5} height={8} rx={1.5} fill={colorTrazo} />
+      <rect x={54} y={27} width={5} height={8} rx={1.5} fill={colorTrazo} />
 
       {/* Casco */}
       <path d="M33,29 A17,19 0 0 1 67,29 Z" fill={colorCasco} stroke={colorTrazo} strokeWidth={1.2} />

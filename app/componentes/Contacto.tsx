@@ -16,10 +16,13 @@ export default function Contacto() {
       style={{ background: "var(--tinta-titulo)" }}
     >
       <div className="contenedor max-w-2xl text-center relative">
-        <Ingeniero pose="saludo" className="mx-auto w-20 h-24 mb-2" />
+        <Ingeniero pose="saludo" className="mx-auto w-[120px] h-[144px] mb-2" />
         <RevealGrupo>
           <RevealItem as="div">
-            <h2 className="text-2xl font-bold mb-3" style={{ color: "#fff" }}>
+            <h2
+              className="text-2xl font-bold mb-3"
+              style={{ color: "#fff", fontFamily: "var(--font-firma), cursive" }}
+            >
               {t(d.titulo, idioma)}
             </h2>
             <p className="mb-8" style={{ color: "rgba(255,255,255,0.75)" }}>

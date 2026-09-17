@@ -11,8 +11,6 @@ import Experiencia from "./Experiencia";
 import ContactoModal from "./ContactoModal";
 import Ingeniero from "./mascota/Ingeniero";
 
-const CURVA = [0.32, 0.72, 0, 1] as const;
-
 const HERRAMIENTAS = [
   "Solid Edge",
   "SolidWorks",
@@ -35,10 +33,10 @@ export default function Hero() {
     <section id="home" className="pt-6 pb-14 md:pt-10 md:pb-20 overflow-x-clip">
       <div className="contenedor flex flex-col items-center text-center">
         <motion.div
-          initial={{ opacity: 0, scale: 0.82 }}
+          initial={{ opacity: 0, scale: 0.78 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true, amount: 0 }}
-          transition={{ duration: 0.8, ease: CURVA }}
+          transition={{ type: "spring", stiffness: 90, damping: 14, mass: 0.8 }}
           className="relative mx-auto w-[228px] h-[228px] sm:w-[290px] sm:h-[290px] md:w-[358px] md:h-[358px] lg:w-[428px] lg:h-[428px]"
         >
           <div className="absolute inset-0 flex items-center justify-center">
@@ -117,7 +115,7 @@ export default function Hero() {
           </RevealItem>
           <Ingeniero
             pose="engranaje"
-            className="w-28 h-32 mx-auto mt-4 md:absolute md:mt-0 md:-right-6 md:bottom-0 md:translate-y-1/3"
+            className="w-[168px] h-[192px] mx-auto mt-4 md:absolute md:mt-0 md:-right-10 md:bottom-0 md:translate-y-1/3"
           />
         </RevealGrupo>
 

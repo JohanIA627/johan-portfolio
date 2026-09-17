@@ -3,12 +3,10 @@
 import { motion } from "motion/react";
 import type { ReactNode } from "react";
 
-const CURVA = [0.32, 0.72, 0, 1] as const;
-
 export default function Reveal({
   children,
   delay = 0,
-  y = 20,
+  y = 28,
 }: {
   children: ReactNode;
   delay?: number;
@@ -16,10 +14,10 @@ export default function Reveal({
 }) {
   return (
     <motion.div
-      initial={{ opacity: 0, y }}
-      whileInView={{ opacity: 1, y: 0 }}
+      initial={{ opacity: 0, y, scale: 0.96 }}
+      whileInView={{ opacity: 1, y: 0, scale: 1 }}
       viewport={{ once: true, amount: 0.2 }}
-      transition={{ duration: 0.5, delay, ease: CURVA }}
+      transition={{ type: "spring", stiffness: 140, damping: 16, mass: 0.6, delay }}
     >
       {children}
     </motion.div>
