@@ -17,6 +17,7 @@ const HERRAMIENTAS = [
   "AutoCAD",
   "Power BI",
   "Excel / VBA",
+  "SQL / PostgreSQL",
   "n8n",
   "Claude Code",
   "Next.js",

@@ -9,6 +9,7 @@ const ENLACES: { href: string; clave: keyof typeof diccionario.nav }[] = [
   { href: "#home", clave: "home" },
   { href: "#proyectos-ingenieria", clave: "proyectosIngenieria" },
   { href: "#plataformas", clave: "plataformas" },
+  { href: "#proyectos-academicos", clave: "academicos" },
 ];
 
 const CURVA = [0.32, 0.72, 0, 1] as const;

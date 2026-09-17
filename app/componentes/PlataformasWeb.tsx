@@ -5,8 +5,6 @@ import { diccionario } from "../i18n/diccionario";
 import { t, useIdioma } from "../i18n/contexto";
 import Reveal from "./Reveal";
 import ArchivadorServidor from "./iconos/ArchivadorServidor";
-import ReciboEscaneado from "./iconos/ReciboEscaneado";
-import Candado from "./iconos/Candado";
 import GrafoNodos from "./iconos/GrafoNodos";
 
 export default function PlataformasWeb() {
@@ -47,7 +45,7 @@ export default function PlataformasWeb() {
                     boxShadow: "var(--sombra)",
                   }}
                 >
-                  {p.id === "gestion-ph" ? <ArchivadorServidor /> : <ReciboEscaneado />}
+                  <ArchivadorServidor />
                 </div>
                 <div className="flex-1">
                   <h3 className="text-lg font-semibold mb-2" style={{ color: "var(--tinta-titulo)" }}>
@@ -70,18 +68,15 @@ export default function PlataformasWeb() {
                       })}
                     </p>
                     {p.estado && (
-                      <span className="inline-flex items-center gap-1.5">
-                        <span
-                          className="dato text-[11px] px-2.5 py-0.5 rounded-full"
-                          style={{
-                            background: "var(--fondo)",
-                            color: "var(--acento)",
-                            border: "1px solid var(--borde)",
-                          }}
-                        >
-                          {t(p.estado, idioma)}
-                        </span>
-                        {p.id === "fl-shoes" && <Candado />}
+                      <span
+                        className="dato text-[11px] px-2.5 py-0.5 rounded-full"
+                        style={{
+                          background: "var(--fondo)",
+                          color: "var(--acento)",
+                          border: "1px solid var(--borde)",
+                        }}
+                      >
+                        {t(p.estado, idioma)}
                       </span>
                     )}
                   </div>

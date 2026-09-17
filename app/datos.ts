@@ -64,7 +64,7 @@ export const experiencias: Experiencia[] = [
   },
   {
     periodo: { es: "jul. 2026 – hoy", en: "Jul 2026 – present" },
-    rol: { es: "Product Owner", en: "Product Owner" },
+    rol: { es: "Product manager", en: "Product Manager" },
     empresa: "Proinnprot SAS",
     emoji: "🧠",
     descripcion: {
@@ -73,27 +73,17 @@ export const experiencias: Experiencia[] = [
     },
     proyectoId: "gestion-ph",
   },
-  {
-    periodo: { es: "ago. 2026", en: "Aug 2026" },
-    rol: { es: "Desarrollador de software", en: "Software Developer" },
-    empresa: "Consultorio Empresarial UPB — FL SHOES",
-    emoji: "💻",
-    descripcion: {
-      es: "Construcción del módulo de cuentas por pagar de una fábrica de calzado real, reemplazando un Excel compartido sin trazabilidad por una aplicación con control de acceso y auditoría de movimientos.",
-      en: "Built the accounts-payable module for a real footwear factory, replacing a shared Excel sheet with no traceability with an application featuring access control and movement auditing.",
-    },
-    proyectoId: "fl-shoes",
-  },
 ];
 
 export type Proyecto = {
   id: string;
-  categoria: "ingenieria" | "web";
+  categoria: "ingenieria" | "web" | "academico";
   titulo: Bilingue;
   contexto: Bilingue;
   descripcion: Bilingue;
   stack: Bilingue[];
   estado?: Bilingue;
+  emoji?: string;
 };
 
 export const proyectos: Proyecto[] = [
@@ -132,7 +122,7 @@ export const proyectos: Proyecto[] = [
     id: "gestion-ph",
     categoria: "web",
     titulo: { es: "Gestión PH — plataforma de administración", en: "Gestión PH — Management Platform" },
-    contexto: { es: "Product Owner · Proinnprot SAS", en: "Product Owner · Proinnprot SAS" },
+    contexto: { es: "Product manager · Proinnprot SAS", en: "Product Manager · Proinnprot SAS" },
     descripcion: {
       es: "Herramienta a la medida que reemplazó cuadernos y carpetas físicas de una administradora de propiedad horizontal por gestión digital en tiempo real: compromisos y tareas, contratos con renovación automática, contratistas con pólizas y vencimientos, mantenimientos con evidencia obligatoria, y llamados de atención con su flujo de autorización. En uso activo en varios conjuntos residenciales reales, con roles y permisos diferenciados por tipo de usuario.",
       en: "Custom-built tool that replaced notebooks and paper folders at a property management company with real-time digital management: commitments and daily tasks, contracts with automatic renewal, contractors with policy/certificate expirations, maintenance with mandatory evidence, and a formal warning workflow with its own authorization flow. In active use across several real residential complexes, with roles and permissions by user type.",
@@ -148,12 +138,13 @@ export const proyectos: Proyecto[] = [
   },
   {
     id: "fl-shoes",
-    categoria: "web",
-    titulo: { es: "FL SHOES — cuentas por pagar", en: "FL SHOES — Accounts Payable" },
-    contexto: { es: "Consultorio Empresarial UPB", en: "Consultorio Empresarial UPB" },
+    categoria: "academico",
+    titulo: { es: "Sistema ERP + CRM a la medida — FL SHOES", en: "Custom ERP + CRM System — FL SHOES" },
+    contexto: { es: "Consultorio Empresarial UPB · para una fábrica de calzado", en: "UPB Business Consultancy · for a footwear factory" },
+    emoji: "👟",
     descripcion: {
-      es: "Aplicación web para una fábrica de calzado real que reemplaza un Excel compartido sin trazabilidad: modela proveedores, plazos de pago, saldos y estados de cuenta. Control de acceso por rol y movimientos inmutables (una corrección es un movimiento inverso, con autor y fecha), migraciones versionadas desde el día 1 y 50 pruebas automatizadas. Construida con Claude Code como copiloto, incluyendo auditorías de seguridad por agentes de IA que corrigieron una vulnerabilidad real de permisos.",
-      en: "Web application for a real footwear factory that replaces a shared Excel file with no traceability: models suppliers, payment terms, balances, and account statuses. Role-based access control and immutable movements (a correction is a reverse movement, with author and date), versioned migrations from day 1, and 50 automated tests. Built with Claude Code as an engineering copilot, including AI-agent security audits that fixed a real permissions vulnerability.",
+      es: "Participé en el desarrollo de una plataforma a la medida para una fábrica de calzado real, integrando inventarios, cuentas por cobrar y por pagar, pedidos mayoristas con seguimiento de producción, y control de acceso por roles con seguridad a nivel de base de datos (Row Level Security) — permitiéndole a la empresa digitalizar y trazar su cadena de suministro de punta a punta.",
+      en: "I took part in building a custom platform for a real footwear factory, integrating inventory, accounts receivable and payable, wholesale orders with production tracking, and role-based access control with database-level security (Row Level Security) — letting the company digitize and trace its supply chain end to end.",
     },
     stack: [
       { es: "React", en: "React" },
@@ -163,6 +154,53 @@ export const proyectos: Proyecto[] = [
       { es: "Supabase", en: "Supabase" },
       { es: "pgTAP", en: "pgTAP" },
     ],
-    estado: { es: "Finalizado", en: "Completed" },
+  },
+  {
+    id: "mermelatte",
+    categoria: "academico",
+    titulo: { es: "Mermelatte — mermelada de café con mora", en: "Mermelatte — Coffee & Blackberry Jam" },
+    contexto: { es: "Ingeniería Industrial I, UPB · plan de negocio", en: "Industrial Engineering I, UPB · business plan" },
+    emoji: "☕",
+    descripcion: {
+      es: "Plan de negocio completo (Business Model Canvas) para una mermelada de café con mora endulzada con panela: diseño del proceso productivo, costeo unitario y evaluación financiera (VPN $142.415.480 · TIR 54,05%), sustentados en una investigación de mercado propia en el área metropolitana de Bucaramanga.",
+      en: "A complete business plan (Business Model Canvas) for a panela-sweetened coffee-and-blackberry jam: production process design, unit costing, and financial evaluation (NPV $142,415,480 COP · IRR 54.05%), backed by original market research in the Bucaramanga metro area.",
+    },
+    stack: [
+      { es: "Business Model Canvas", en: "Business Model Canvas" },
+      { es: "Estudio de mercado", en: "Market research" },
+      { es: "Evaluación financiera", en: "Financial evaluation" },
+    ],
+    estado: { es: "🏆 1er puesto · Jornada de Investigación Formativa UPB", en: "🏆 1st place · UPB Formative Research Day" },
+  },
+  {
+    id: "tablero-tic",
+    categoria: "academico",
+    titulo: { es: "Tablero Power BI — demanda de formación en TIC", en: "Power BI Dashboard — ICT Training Demand" },
+    contexto: { es: "UPB · analítica de datos", en: "UPB · data analytics" },
+    emoji: "📊",
+    descripcion: {
+      es: "Modelo de datos y tablero en Power BI para responder una pregunta de investigación sobre las necesidades de educación continua en tecnologías de la información a nivel nacional e internacional.",
+      en: "Data model and Power BI dashboard built to answer a research question about continuing-education needs in information technology, both nationally and internationally.",
+    },
+    stack: [
+      { es: "Power BI", en: "Power BI" },
+      { es: "Modelado de datos", en: "Data modeling" },
+    ],
+  },
+  {
+    id: "prospectiva-hotel-punta-diamante",
+    categoria: "academico",
+    titulo: { es: "Plan prospectivo 2045 — Hotel Punta Diamante", en: "2045 Foresight Plan — Hotel Punta Diamante" },
+    contexto: { es: "UPB · prospectiva estratégica", en: "UPB · strategic foresight" },
+    emoji: "🏨",
+    descripcion: {
+      es: "Apliqué la metodología Godet (análisis estructural MICMAC + juego de actores MACTOR) para reducir 30 factores a 6 variables estratégicas y mapear 15 actores del sector hotelero, construyendo 6 escenarios cuantificados —tendencial, apuesta, catastrófico, entre otros— para sustentar decisiones de largo plazo.",
+      en: "I applied the Godet methodology (MICMAC structural analysis + MACTOR stakeholder analysis) to narrow 30 factors down to 6 strategic variables and map 15 stakeholders in the hospitality sector, building 6 quantified scenarios —trend-based, bet, catastrophic, among others— to support long-term decisions.",
+    },
+    stack: [
+      { es: "MICMAC", en: "MICMAC" },
+      { es: "MACTOR", en: "MACTOR" },
+      { es: "Prospectiva estratégica", en: "Strategic foresight" },
+    ],
   },
 ];

@@ -2,8 +2,9 @@ export const diccionario = {
   nav: {
     marca: { es: "Johan Rondón", en: "Johan Rondón" },
     home: { es: "Home", en: "Home" },
-    proyectosIngenieria: { es: "Proyectos de ingeniería", en: "Engineering projects" },
-    plataformas: { es: "Plataformas web", en: "Web platforms" },
+    proyectosIngenieria: { es: "Ingeniería", en: "Engineering" },
+    plataformas: { es: "Software", en: "Software" },
+    academicos: { es: "Proyectos académicos", en: "Academic projects" },
   },
   hero: {
     nombre: { es: "Johan Sebastián Rondón Alvarado", en: "Johan Sebastián Rondón Alvarado" },
@@ -28,13 +29,13 @@ export const diccionario = {
       en: "I'm an Industrial Engineering student at UPB, with a prior background in Mechanical Engineering (UIS) and experience designing equipment and engineering projects for the food industry. My focus: process improvement, project management, and AI-driven operations automation.",
     },
     bio2: {
-      es: "Hoy soy Product Owner de una plataforma interna de gestión que diseñé y llevé a producción, y trabajo con datos, procesos y automatización en proyectos reales — siempre con verificación humana de lo que produce la IA.",
-      en: "I'm currently Product Owner of an internal management platform I designed and shipped to production, and I work with data, processes, and automation on real projects — always with human verification of what AI produces.",
+      es: "Hoy soy Product manager de una plataforma interna de gestión que diseñé y llevé a producción, y trabajo con datos, procesos y automatización en proyectos reales — siempre con verificación humana de lo que produce la IA.",
+      en: "I'm currently Product Manager of an internal management platform I designed and shipped to production, and I work with data, processes, and automation on real projects — always with human verification of what AI produces.",
     },
     tituloExperiencia: { es: "Experiencia", en: "Experience" },
   },
   proyectosIngenieria: {
-    titulo: { es: "Proyectos de ingeniería", en: "Engineering projects" },
+    titulo: { es: "Ingeniería", en: "Engineering" },
     subtitulo: {
       es: "Diseños mecánicos reales, en 3D: arrastra para rotar y usa el scroll para acercarte.",
       en: "Real mechanical designs, in 3D: drag to rotate and scroll to zoom.",
@@ -49,7 +50,7 @@ export const diccionario = {
     },
   },
   plataformas: {
-    titulo: { es: "Plataformas web", en: "Web platforms" },
+    titulo: { es: "Software", en: "Software" },
     subtitulo: {
       es: "Aplicaciones que diseñé y desarrollé de principio a fin.",
       en: "Applications I designed and built end to end.",
@@ -57,6 +58,13 @@ export const diccionario = {
     avisoCapturas: {
       es: "Capturas próximamente",
       en: "Screenshots coming soon",
+    },
+  },
+  proyectosAcademicos: {
+    titulo: { es: "Proyectos académicos", en: "Academic projects" },
+    subtitulo: {
+      es: "Trabajos de la universidad que llevé hasta el detalle: datos, negocio y estrategia.",
+      en: "University projects I took all the way to the detail: data, business, and strategy.",
     },
   },
   contacto: {
