@@ -7,6 +7,7 @@ import ModelViewer from "./ModelViewer";
 import Reveal from "./Reveal";
 import MotorreductorSinfin from "./iconos/MotorreductorSinfin";
 import CircuitoCIP from "./iconos/CircuitoCIP";
+import Ingeniero from "./mascota/Ingeniero";
 
 export default function ProyectosIngenieria() {
   const { idioma } = useIdioma();
@@ -15,7 +16,7 @@ export default function ProyectosIngenieria() {
 
   return (
     <section id="proyectos-ingenieria" className="py-14 md:py-20">
-      <div className="contenedor">
+      <div className="contenedor relative">
         <Reveal>
           <h2 className="text-2xl font-bold mb-2">
             <span aria-hidden>⚙️ </span>
@@ -23,6 +24,10 @@ export default function ProyectosIngenieria() {
           </h2>
           <p className="tenue mb-10">{t(d.subtitulo, idioma)}</p>
         </Reveal>
+        <Ingeniero
+          pose="plano"
+          className="hidden md:block absolute top-0 right-0 w-24 h-28"
+        />
         <div className="grid md:grid-cols-2 gap-6">
           {proyectosIngenieria.map((p, i) => (
             <Reveal key={p.id} delay={i * 0.08}>

@@ -22,8 +22,8 @@ export const diccionario = {
       es: "Bucaramanga / Floridablanca, Santander, Colombia.",
       en: "Bucaramanga / Floridablanca, Santander, Colombia.",
     },
-    botonLinkedin: { es: "Ver LinkedIn", en: "View LinkedIn" },
-    botonCorreo: { es: "Escribir un correo", en: "Send an email" },
+    botonContacto: { es: "Contacto", en: "Contact" },
+    botonCV: { es: "Descargar CV", en: "Download CV" },
     bio1: {
       es: "Soy estudiante de Ingeniería Industrial en la UPB, con base previa en Ingeniería Mecánica (UIS) y experiencia en diseño de equipos y proyectos de ingeniería para la industria de alimentos. Mi enfoque: mejora de procesos, gestión de proyectos y automatización de operaciones con IA.",
       en: "I'm an Industrial Engineering student at UPB, with a prior background in Mechanical Engineering (UIS) and experience designing equipment and engineering projects for the food industry. My focus: process improvement, project management, and AI-driven operations automation.",
@@ -65,6 +65,14 @@ export const diccionario = {
     subtitulo: {
       es: "Trabajos de la universidad que llevé hasta el detalle: datos, negocio y estrategia.",
       en: "University projects I took all the way to the detail: data, business, and strategy.",
+    },
+  },
+  experiencia: {
+    verMas: { es: "Ver más", en: "View more" },
+    cerrar: { es: "Cerrar", en: "Close" },
+    fotosProximamente: {
+      es: "Fotos reales de este proyecto — próximamente.",
+      en: "Real photos of this project — coming soon.",
     },
   },
   contacto: {

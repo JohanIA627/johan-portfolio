@@ -3,6 +3,7 @@
 import { diccionario } from "../i18n/diccionario";
 import { t, useIdioma } from "../i18n/contexto";
 import { RevealGrupo, RevealItem } from "./RevealGrupo";
+import Ingeniero from "./mascota/Ingeniero";
 
 export default function Contacto() {
   const { idioma } = useIdioma();
@@ -14,7 +15,8 @@ export default function Contacto() {
       className="py-14 md:py-20"
       style={{ background: "var(--tinta-titulo)" }}
     >
-      <div className="contenedor max-w-2xl text-center">
+      <div className="contenedor max-w-2xl text-center relative">
+        <Ingeniero pose="saludo" className="mx-auto w-20 h-24 mb-2" />
         <RevealGrupo>
           <RevealItem as="div">
             <h2 className="text-2xl font-bold mb-3" style={{ color: "#fff" }}>

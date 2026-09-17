@@ -7,6 +7,8 @@ export type Experiencia = {
   descripcion: Bilingue;
   proyectoId?: string;
   emoji?: string;
+  detalle?: Bilingue;
+  fotos?: string[];
 };
 
 export const experiencias: Experiencia[] = [

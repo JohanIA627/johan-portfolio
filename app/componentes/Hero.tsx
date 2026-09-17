@@ -1,13 +1,15 @@
 "use client";
 
+import { useState } from "react";
 import Image from "next/image";
 import { motion } from "motion/react";
 import { diccionario } from "../i18n/diccionario";
 import { t, useIdioma } from "../i18n/contexto";
-import { experiencias } from "../datos";
 import { RevealGrupo, RevealItem } from "./RevealGrupo";
 import VerificacionHumana from "./iconos/VerificacionHumana";
-import HallazgoConsumibles from "./iconos/HallazgoConsumibles";
+import Experiencia from "./Experiencia";
+import ContactoModal from "./ContactoModal";
+import Ingeniero from "./mascota/Ingeniero";
 
 const CURVA = [0.32, 0.72, 0, 1] as const;
 
@@ -27,6 +29,7 @@ const HERRAMIENTAS = [
 export default function Hero() {
   const { idioma } = useIdioma();
   const h = diccionario.hero;
+  const [contactoAbierto, setContactoAbierto] = useState(false);
 
   return (
     <section id="home" className="pt-6 pb-14 md:pt-10 md:pb-20 overflow-x-clip">
@@ -87,36 +90,20 @@ export default function Hero() {
           </span>
         </motion.div>
 
-        <RevealGrupo amount={0} className="mt-10 max-w-xl flex flex-col items-center">
-          <RevealItem as="div">
-            <h1 className="text-2xl md:text-3xl font-bold leading-tight mb-3">
-              {t(h.titular, idioma)}
-            </h1>
-          </RevealItem>
-          <RevealItem as="div">
-            <p className="text-base md:text-lg mb-2" style={{ color: "var(--tinta)" }}>
-              {t(h.subtitular, idioma)}
-            </p>
-          </RevealItem>
-          <RevealItem as="div">
-            <p className="tenue mb-7">{t(h.ubicacion, idioma)}</p>
-          </RevealItem>
+        <RevealGrupo amount={0} className="mt-10 flex flex-col items-center">
           <RevealItem as="div" className="flex flex-wrap gap-3 justify-center">
-            <a
-              className="boton"
-              href="https://www.linkedin.com/in/johansebastianrondon"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              {t(h.botonLinkedin, idioma)}
-            </a>
-            <a className="boton secundario" href="mailto:johan.rondon27@hotmail.com">
-              {t(h.botonCorreo, idioma)}
+            <button type="button" className="boton" onClick={() => setContactoAbierto(true)}>
+              {t(h.botonContacto, idioma)}
+            </button>
+            <a className="boton secundario" href="/cv-johan-rondon.pdf" download>
+              {t(h.botonCV, idioma)}
             </a>
           </RevealItem>
         </RevealGrupo>
 
-        <RevealGrupo className="tarjeta p-7 md:p-9 mt-14 max-w-2xl text-left">
+        <ContactoModal abierto={contactoAbierto} onCerrar={() => setContactoAbierto(false)} />
+
+        <RevealGrupo className="tarjeta p-7 md:p-9 mt-14 max-w-2xl text-left relative overflow-visible">
           <RevealItem as="div">
             <p className="mb-4">{t(h.bio1, idioma)}</p>
           </RevealItem>
@@ -128,32 +115,13 @@ export default function Hero() {
           <RevealItem as="div">
             <p className="dato text-xs tenue">{HERRAMIENTAS.join("  ·  ")}</p>
           </RevealItem>
+          <Ingeniero
+            pose="engranaje"
+            className="w-28 h-32 mx-auto mt-4 md:absolute md:mt-0 md:-right-6 md:bottom-0 md:translate-y-1/3"
+          />
         </RevealGrupo>
 
-        <div className="mt-10 max-w-2xl text-left w-full">
-          <h2 className="text-lg font-semibold mb-4">{t(h.tituloExperiencia, idioma)}</h2>
-          <RevealGrupo as="ul" className="flex flex-col gap-4">
-            {experiencias.map((exp) => (
-              <RevealItem
-                key={`${exp.empresa}-${t(exp.periodo, idioma)}`}
-                as="li"
-                className="pb-4"
-              >
-                <div style={{ borderBottom: "1px solid var(--borde)" }} className="pb-0">
-                  <p className="dato text-xs tenue mb-1">{t(exp.periodo, idioma)}</p>
-                  <p className="text-sm font-semibold" style={{ color: "var(--tinta-titulo)" }}>
-                    {exp.emoji && <span aria-hidden>{exp.emoji} </span>}
-                    {t(exp.rol, idioma)} · {exp.empresa}
-                  </p>
-                  <p className="text-sm mt-1 flex items-start gap-2" style={{ color: "var(--tinta)" }}>
-                    <span>{t(exp.descripcion, idioma)}</span>
-                    {exp.empresa === "DSM Latinoamérica" && <HallazgoConsumibles />}
-                  </p>
-                </div>
-              </RevealItem>
-            ))}
-          </RevealGrupo>
-        </div>
+        <Experiencia />
       </div>
     </section>
   );

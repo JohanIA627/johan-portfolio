@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import { motion } from "motion/react";
 import { diccionario } from "../i18n/diccionario";
 import { t, useIdioma } from "../i18n/contexto";
@@ -14,9 +15,38 @@ const ENLACES: { href: string; clave: keyof typeof diccionario.nav }[] = [
 
 const CURVA = [0.32, 0.72, 0, 1] as const;
 
+function useSeccionActiva() {
+  const [activa, setActiva] = useState<string>("home");
+
+  useEffect(() => {
+    const ids = ENLACES.map((e) => e.href.slice(1));
+    const elementos = ids
+      .map((id) => document.getElementById(id))
+      .filter((el): el is HTMLElement => el !== null);
+
+    if (elementos.length === 0) return;
+
+    const observador = new IntersectionObserver(
+      (entradas) => {
+        const visibles = entradas.filter((entrada) => entrada.isIntersecting);
+        if (visibles.length > 0) {
+          setActiva(visibles[0].target.id);
+        }
+      },
+      { rootMargin: "-40% 0px -55% 0px", threshold: 0 }
+    );
+
+    elementos.forEach((el) => observador.observe(el));
+    return () => observador.disconnect();
+  }, []);
+
+  return activa;
+}
+
 export default function NavBar() {
   const { idioma, cambiarIdioma } = useIdioma();
   const d = diccionario.nav;
+  const seccionActiva = useSeccionActiva();
 
   return (
     <motion.nav
@@ -32,12 +62,25 @@ export default function NavBar() {
     >
       <div className="contenedor flex items-center justify-between h-14">
         <div className="flex items-center gap-6">
-          <span className="text-sm font-semibold" style={{ color: "var(--tinta-titulo)" }}>
+          <span
+            className="text-lg font-bold"
+            style={{ color: "var(--acento)", fontFamily: "var(--font-firma), cursive" }}
+          >
             {t(d.marca, idioma)}
           </span>
-          <div className="hidden sm:flex gap-5 text-sm">
+          <div className="hidden sm:flex gap-5 text-base">
             {ENLACES.map((e) => (
-              <a key={e.href} href={e.href} style={{ color: "var(--tinta)" }}>
+              <a
+                key={e.href}
+                href={e.href}
+                className="enlace-nav"
+                style={{
+                  color: "var(--tinta-titulo)",
+                  fontFamily: "var(--font-firma), cursive",
+                  textDecoration: seccionActiva === e.href.slice(1) ? "underline" : "none",
+                  textUnderlineOffset: "4px",
+                }}
+              >
                 {t(d[e.clave], idioma)}
               </a>
             ))}
@@ -47,9 +90,19 @@ export default function NavBar() {
         <ToggleIdioma idioma={idioma} cambiarIdioma={cambiarIdioma} />
       </div>
 
-      <div className="sm:hidden flex gap-4 text-sm px-6 pb-3 -mt-1">
+      <div className="sm:hidden flex gap-4 text-base px-6 pb-3 -mt-1">
         {ENLACES.map((e) => (
-          <a key={e.href} href={e.href} style={{ color: "var(--tinta)" }}>
+          <a
+            key={e.href}
+            href={e.href}
+            className="enlace-nav"
+            style={{
+              color: "var(--tinta-titulo)",
+              fontFamily: "var(--font-firma), cursive",
+              textDecoration: seccionActiva === e.href.slice(1) ? "underline" : "none",
+              textUnderlineOffset: "4px",
+            }}
+          >
             {t(d[e.clave], idioma)}
           </a>
         ))}

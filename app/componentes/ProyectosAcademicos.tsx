@@ -4,6 +4,7 @@ import { proyectos } from "../datos";
 import { diccionario } from "../i18n/diccionario";
 import { t, useIdioma } from "../i18n/contexto";
 import Reveal from "./Reveal";
+import Ingeniero from "./mascota/Ingeniero";
 
 export default function ProyectosAcademicos() {
   const { idioma } = useIdioma();
@@ -12,7 +13,7 @@ export default function ProyectosAcademicos() {
 
   return (
     <section id="proyectos-academicos" className="py-14 md:py-20">
-      <div className="contenedor">
+      <div className="contenedor relative">
         <Reveal>
           <h2 className="text-2xl font-bold mb-2">
             <span aria-hidden>🎓 </span>
@@ -20,6 +21,10 @@ export default function ProyectosAcademicos() {
           </h2>
           <p className="tenue mb-10">{t(d.subtitulo, idioma)}</p>
         </Reveal>
+        <Ingeniero
+          pose="diploma"
+          className="hidden md:block absolute top-0 right-0 w-24 h-28"
+        />
         <div className="grid md:grid-cols-2 gap-6">
           {proyectosAcademicos.map((p, i) => (
             <Reveal key={p.id} delay={i * 0.08}>
