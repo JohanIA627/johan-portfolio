@@ -5,6 +5,7 @@ import { diccionario } from "../i18n/diccionario";
 import { t, useIdioma } from "../i18n/contexto";
 import Reveal from "./Reveal";
 import Ingeniero from "./mascota/Ingeniero";
+import EnConstruccion from "./EnConstruccion";
 
 export default function ProyectosAcademicos() {
   const { idioma } = useIdioma();
@@ -34,13 +35,7 @@ export default function ProyectosAcademicos() {
           {proyectosAcademicos.map((p, i) => (
             <Reveal key={p.id} delay={i * 0.08}>
               <article id={p.id} className="tarjeta scroll-mt-24 h-full overflow-hidden">
-                <div
-                  className="w-full h-40 flex items-center justify-center"
-                  style={{ background: "var(--fondo)" }}
-                  aria-hidden="true"
-                >
-                  <span className="text-5xl">{p.emoji}</span>
-                </div>
+                <EnConstruccion indice={i} />
                 <div className="p-6 md:p-7">
                   <div className="flex flex-wrap items-start justify-between gap-2 mb-1">
                     <h3
