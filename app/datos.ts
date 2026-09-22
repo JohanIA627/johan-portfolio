@@ -140,6 +140,7 @@ export const proyectos: Proyecto[] = [
   {
     id: "dosificadora-indunilo",
     categoria: "ingenieria",
+    modelo3d: "/models/dosificadora.glb",
     titulo: { es: "Dosificadora de tornillo sin fin — 2 m³", en: "Screw-Feeder Doser — 2 m³" },
     contexto: { es: "Innovameq · para Indunilo", en: "Innovameq · for Indunilo" },
     descripcion: {
