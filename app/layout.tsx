@@ -16,10 +16,27 @@ const fuzzyBubbles = Fuzzy_Bubbles({
   weight: ["400", "700"],
 });
 
+const titulo = "Johan Sebastián Rondón — Portafolio";
+const descripcion =
+  "Ingeniero industrial (UPB). Digitalización de procesos, datos y automatización con IA aplicada a operaciones.";
+
 export const metadata: Metadata = {
-  title: "Johan Sebastián Rondón — Portafolio",
-  description:
-    "Ingeniero industrial (UPB). Digitalización de procesos, datos y automatización con IA aplicada a operaciones.",
+  title: titulo,
+  description: descripcion,
+  openGraph: {
+    title: titulo,
+    description: descripcion,
+    url: "https://johan-portfolio-silk.vercel.app",
+    siteName: titulo,
+    images: ["https://johan-portfolio-silk.vercel.app/foto-johan.jpg"],
+    locale: "es_CO",
+    type: "website",
+  },
+  twitter: {
+    card: "summary",
+    title: titulo,
+    description: descripcion,
+  },
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

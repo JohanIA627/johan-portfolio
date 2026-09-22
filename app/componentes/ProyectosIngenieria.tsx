@@ -15,14 +15,19 @@ export default function ProyectosIngenieria() {
   const proyectosIngenieria = proyectos.filter((p) => p.categoria === "ingenieria");
 
   return (
-    <section id="proyectos-ingenieria" className="pt-4 pb-14 md:pt-6 md:pb-20">
+    <section id="proyectos-ingenieria" className="pt-6 pb-14 md:pt-10 md:pb-20">
       <div className="contenedor relative">
         <Reveal>
           <h2 className="text-2xl font-bold mb-2" style={{ fontFamily: "var(--font-firma), cursive" }}>
             <span aria-hidden>⚙️ </span>
             {t(d.titulo, idioma)}
           </h2>
-          <p className="tenue mb-10">{t(d.subtitulo, idioma)}</p>
+          <p
+            className="mb-10 text-lg"
+            style={{ fontFamily: "var(--font-firma), cursive", color: "var(--tinta)" }}
+          >
+            {t(d.subtitulo, idioma)}
+          </p>
         </Reveal>
         <Ingeniero
           pose="plano"

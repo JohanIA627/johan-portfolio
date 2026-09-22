@@ -25,6 +25,10 @@ export function ProveedorIdioma({ children }: { children: ReactNode }) {
     }
   }, []);
 
+  useEffect(() => {
+    document.documentElement.lang = idioma;
+  }, [idioma]);
+
   const cambiarIdioma = (nuevo: Idioma) => {
     setIdioma(nuevo);
     try {

@@ -6,18 +6,6 @@ import { t, useIdioma } from "../i18n/contexto";
 import Reveal from "./Reveal";
 import Ingeniero from "./mascota/Ingeniero";
 
-// Placeholder temporal (LoremFlickr) hasta que existan capturas reales de cada proyecto académico.
-const FOTO_TEMA: Record<string, { tags: string; lock: number }> = {
-  "fl-shoes": { tags: "shoe-factory,manufacturing", lock: 1 },
-  mermelatte: { tags: "jam,coffee", lock: 2 },
-  "tablero-tic": { tags: "dashboard,data", lock: 3 },
-  "prospectiva-hotel-punta-diamante": { tags: "luxury-hotel,resort", lock: 4 },
-};
-function urlFoto(id: string) {
-  const tema = FOTO_TEMA[id] ?? { tags: "engineering,industry", lock: 0 };
-  return `https://loremflickr.com/640/400/${tema.tags}?lock=${tema.lock}`;
-}
-
 export default function ProyectosAcademicos() {
   const { idioma } = useIdioma();
   const d = diccionario.proyectosAcademicos;
@@ -31,7 +19,12 @@ export default function ProyectosAcademicos() {
             <span aria-hidden>🎓 </span>
             {t(d.titulo, idioma)}
           </h2>
-          <p className="tenue mb-10">{t(d.subtitulo, idioma)}</p>
+          <p
+            className="mb-10 text-lg"
+            style={{ fontFamily: "var(--font-firma), cursive", color: "var(--tinta)" }}
+          >
+            {t(d.subtitulo, idioma)}
+          </p>
         </Reveal>
         <Ingeniero
           pose="diploma"
@@ -41,13 +34,13 @@ export default function ProyectosAcademicos() {
           {proyectosAcademicos.map((p, i) => (
             <Reveal key={p.id} delay={i * 0.08}>
               <article id={p.id} className="tarjeta scroll-mt-24 h-full overflow-hidden">
-                <img
-                  src={urlFoto(p.id)}
-                  alt=""
+                <div
+                  className="w-full h-40 flex items-center justify-center"
+                  style={{ background: "var(--fondo)" }}
                   aria-hidden="true"
-                  loading="lazy"
-                  className="w-full h-40 object-cover"
-                />
+                >
+                  <span className="text-5xl">{p.emoji}</span>
+                </div>
                 <div className="p-6 md:p-7">
                   <div className="flex flex-wrap items-start justify-between gap-2 mb-1">
                     <h3

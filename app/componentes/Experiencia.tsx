@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import { experiencias, type Experiencia as ExperienciaTipo } from "../datos";
 import { diccionario } from "../i18n/diccionario";
 import { t, useIdioma } from "../i18n/contexto";
@@ -29,11 +30,13 @@ export default function Experiencia() {
               className="tarjeta text-left w-full h-full flex flex-col cursor-pointer overflow-hidden"
             >
               {exp.fotos?.[0] ? (
-                <img
+                <Image
                   src={exp.fotos[0]}
                   alt=""
                   aria-hidden="true"
                   loading="lazy"
+                  width={432}
+                  height={160}
                   className="w-full h-40 object-cover"
                 />
               ) : (

@@ -92,12 +92,12 @@ export default function ToggleIdioma({
   const rotacion = activo ? ROTACION_GRADOS : 0;
 
   return (
-    <div className="inline-flex items-center gap-2.5" role="group" aria-label="Idioma / Language">
+    <div className="inline-flex items-center gap-1" role="group" aria-label="Idioma / Language">
       <button
         type="button"
         onClick={() => cambiarIdioma("es")}
         aria-pressed={idioma === "es"}
-        className="dato text-xs font-semibold transition-colors"
+        className="dato text-xs font-semibold transition-colors px-2 py-1.5"
         style={{
           color: idioma === "es" ? "var(--tinta-titulo)" : "var(--tinta-suave)",
           transitionDuration: "var(--rapido)",
@@ -132,7 +132,7 @@ export default function ToggleIdioma({
         type="button"
         onClick={() => cambiarIdioma("en")}
         aria-pressed={idioma === "en"}
-        className="dato text-xs font-semibold transition-colors"
+        className="dato text-xs font-semibold transition-colors px-2 py-1.5"
         style={{
           color: idioma === "en" ? "var(--tinta-titulo)" : "var(--tinta-suave)",
           transitionDuration: "var(--rapido)",

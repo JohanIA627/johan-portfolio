@@ -53,8 +53,8 @@ export const experiencias: Experiencia[] = [
       en: "Design and construction of a 15,000 L/h CIP system for Indulácteos, plus consumables tracking and inventory tools in Excel/VBA.",
     },
     detalle: {
-      es: "En DSM Latinoamérica participé en el diseño y los planos de fabricación de un sistema CIP de 15.000 L/h para Indulácteos, un cliente del sector lácteo, y acompañé la construcción hasta la entrega, junto con el análisis de precios unitarios y el manual de operación. En paralelo, construí en Excel/VBA una herramienta para llevar la trazabilidad de los consumibles de la planta. Ahí encontré algo que nadie había visto: una sola máquina estaba consumiendo varios millones de pesos que la empresa nunca había cuantificado. También levanté el inventario general de maquinaria y equipos, y el de herramientas y elementos de protección personal por operario — información que hasta entonces no existía centralizada en ningún lado.",
-      en: "At DSM Latinoamérica I took part in the design and manufacturing drawings of a 15,000 L/h CIP system for Indulácteos, a dairy-sector client, and stayed involved through construction and delivery, along with the unit-price analysis and operation manual. In parallel, I built an Excel/VBA tool to track the plant's consumables. That's where I found something nobody had noticed: a single machine was consuming several million pesos that the company had never quantified. I also put together the plant's full inventory of machinery and equipment, plus the tools and PPE assigned to each operator — information that, until then, didn't exist in one place.",
+      es: "En DSM Latinoamérica participé en el diseño y los planos de fabricación de un sistema CIP de 15.000 L/h para Indulácteos, un cliente del sector lácteo, y acompañé la construcción hasta la entrega, y desarrollé el análisis de precios unitarios y el manual de operación. En paralelo, construí en Excel/VBA una herramienta para llevar la trazabilidad de los consumibles de la planta. Ahí detecté algo que nadie había cuantificado antes: una sola máquina estaba consumiendo varios millones de pesos que la empresa no estaba rastreando. También levanté el inventario general de maquinaria y equipos, y el de herramientas y elementos de protección personal por operario — información que hasta entonces no existía centralizada en ningún lado.",
+      en: "At DSM Latinoamérica I took part in the design and manufacturing drawings of a 15,000 L/h CIP system for Indulácteos, a dairy-sector client, and stayed involved through construction and delivery, and developed the unit-price analysis and operation manual. In parallel, I built an Excel/VBA tool to track the plant's consumables. That's where I noticed something nobody had quantified before: a single machine was consuming several million pesos the company had never tracked. I also put together the plant's full inventory of machinery and equipment, plus the tools and PPE assigned to each operator — information that, until then, didn't exist in one place.",
     },
     proyectoId: "cip-indulacteos",
   },
@@ -63,7 +63,7 @@ export const experiencias: Experiencia[] = [
     rol: { es: "Colaborador en marketing y estrategia", en: "Marketing & Strategy Collaborator" },
     empresa: "Cuché Cuté",
     emoji: "🎯",
-    fotos: ["/fotos/cuche-cute.png"],
+    fotos: ["/fotos/cuche-cute.jpg"],
     descripcion: {
       es: "Colaboración externa con una marca de café de especialidad en prelanzamiento: estrategia de marca, contenido y tienda en Shopify.",
       en: "External collaboration with a specialty coffee brand during its pre-launch: brand strategy, content, and a Shopify store.",
@@ -97,11 +97,11 @@ export const experiencias: Experiencia[] = [
     fotos: ["/fotos/proinnprot.png"],
     descripcion: {
       es: "Plataforma interna para administración de propiedad horizontal: reemplaza registros en papel por gestión digital de tareas, contratos, mantenimientos y más.",
-      en: "Internal platform for property management: replaces paper logs with real-time digital tracking of tasks, contracts, and maintenance.",
+      en: "Internal platform for property management: replaces paper logs with digital management of tasks, contracts, maintenance, and more.",
     },
     detalle: {
-      es: "Como product manager en Proinnprot, definí y lideré de principio a fin el desarrollo de una plataforma que reemplazó el registro manual en cuadernos y carpetas físicas por gestión digital en tiempo real, para una empresa que administra propiedad horizontal. Diseñé módulos para compromisos y tareas diarias, contratos con renovación automática y preaviso, contratistas con control de pólizas y certificados por vencer, mantenimientos con evidencia obligatoria, y llamados de atención con su propio flujo de autorización. Los informes que antes tomaban días de armar a mano ahora se generan al instante, lo que le devuelve tiempo real a quien administra. Hoy la usan administradores, gerentes y presidentes de consejo en varios conjuntos residenciales, y ese uso diario es la prueba de que resolvió un problema real.",
-      en: "As product manager at Proinnprot, I defined and led the end-to-end development of a platform that replaced manual record-keeping in notebooks and paper folders with real-time digital management, for a company that manages properties under horizontal ownership (condo-style residential complexes). I designed modules for daily commitments and tasks, contracts with automatic renewal and advance notice, contractors with tracking of insurance policies and certificates nearing expiration, maintenance work with mandatory evidence, and attention notices with their own approval flow. Reports that used to take days to put together by hand are now generated instantly, giving administrators real time back. It's now used daily by administrators, managers, and board presidents across several residential complexes, and that daily use is the real proof it solved a real problem.",
+      es: "Como product manager en Proinnprot, definí y lideré de principio a fin el desarrollo de una plataforma que reemplazó el registro manual en cuadernos y carpetas físicas por gestión digital en tiempo real, para una empresa que administra propiedad horizontal. Diseñé módulos para compromisos y tareas diarias, contratos con renovación automática y preaviso, contratistas con control de pólizas y certificados por vencer, mantenimientos con evidencia obligatoria, y llamados de atención con su propio flujo de autorización. Los informes que antes tomaban días de armar a mano ahora se generan al instante, lo que le devuelve tiempo a quien administra. Hoy la usan administradores, gerentes y presidentes de consejo en varios conjuntos residenciales, y verla usada todos los días me confirmó que sí resolvía un problema real.",
+      en: "As product manager at Proinnprot, I defined and led the end-to-end development of a platform that replaced manual record-keeping in notebooks and paper folders with real-time digital management, for a company that manages properties under horizontal ownership (condo-style residential complexes). I designed modules for daily commitments and tasks, contracts with automatic renewal and advance notice, contractors with tracking of insurance policies and certificates nearing expiration, maintenance work with mandatory evidence, and attention notices with their own approval flow. Reports that used to take days to put together by hand are now generated instantly, giving administrators their time back. It's now used daily by administrators, managers, and board presidents across several residential complexes, and seeing it used every day confirmed that it was solving a real problem.",
     },
     proyectoId: "gestion-ph",
   },
@@ -160,14 +160,14 @@ export const proyectos: Proyecto[] = [
     contexto: { es: "Product manager · Proinnprot SAS", en: "Product Manager · Proinnprot SAS" },
     descripcion: {
       es: "Herramienta a la medida que reemplazó cuadernos y carpetas físicas de una administradora de propiedad horizontal por gestión digital en tiempo real: compromisos y tareas, contratos con renovación automática, contratistas con pólizas y vencimientos, mantenimientos con evidencia obligatoria, y llamados de atención con su flujo de autorización. En uso activo en varios conjuntos residenciales reales, con roles y permisos diferenciados por tipo de usuario.",
-      en: "Custom-built tool that replaced notebooks and paper folders at a property management company with real-time digital management: commitments and daily tasks, contracts with automatic renewal, contractors with policy/certificate expirations, maintenance with mandatory evidence, and a formal warning workflow with its own authorization flow. In active use across several real residential complexes, with roles and permissions by user type.",
+      en: "Custom-built tool that replaced notebooks and paper folders at a property management company with real-time digital management: commitments and daily tasks, contracts with automatic renewal, contractors with policy/certificate expirations, maintenance with mandatory evidence, and attention notices with their own authorization flow. In active use across several real residential complexes, with roles and permissions by user type.",
     },
     stack: [
       { es: "Next.js", en: "Next.js" },
       { es: "Supabase", en: "Supabase" },
       { es: "PostgreSQL", en: "PostgreSQL" },
       { es: "Row Level Security", en: "Row Level Security" },
-      { es: "n8n", en: "n8n" },
+      { es: "n8n (en pausa)", en: "n8n (paused)" },
     ],
     estado: { es: "En producción", en: "In production" },
   },

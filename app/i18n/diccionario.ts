@@ -1,7 +1,7 @@
 export const diccionario = {
   nav: {
     marca: { es: "Johan Rondón", en: "Johan Rondón" },
-    home: { es: "Home", en: "Home" },
+    home: { es: "Inicio", en: "Home" },
     proyectosIngenieria: { es: "Ingeniería", en: "Engineering" },
     plataformas: { es: "Software", en: "Software" },
     academicos: { es: "Proyectos académicos", en: "Academic projects" },

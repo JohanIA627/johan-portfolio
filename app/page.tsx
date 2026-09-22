@@ -10,14 +10,16 @@ export default function Home() {
   return (
     <div className="flex flex-col flex-1">
       <NavBar />
-      <Hero />
-      <SeparadorProceso />
-      <ProyectosIngenieria />
-      <SeparadorProceso />
-      <PlataformasWeb />
-      <SeparadorProceso />
-      <ProyectosAcademicos />
-      <SeparadorProceso />
+      <main className="flex flex-col flex-1">
+        <Hero />
+        <SeparadorProceso />
+        <ProyectosIngenieria />
+        <SeparadorProceso />
+        <PlataformasWeb />
+        <SeparadorProceso />
+        <ProyectosAcademicos />
+        <SeparadorProceso />
+      </main>
       <Contacto />
     </div>
   );

@@ -15,15 +15,39 @@ export default function ExperienciaModal({ experiencia, onCerrar }: Props) {
   const { idioma } = useIdioma();
   const d = diccionario.experiencia;
   const panelRef = useRef<HTMLDivElement>(null);
+  const disparadorRef = useRef<HTMLElement | null>(null);
+  const tituloId = "experiencia-modal-titulo";
 
   useEffect(() => {
     if (!experiencia) return;
+    disparadorRef.current = document.activeElement as HTMLElement | null;
+    panelRef.current?.focus();
+
     const manejarTecla = (e: KeyboardEvent) => {
-      if (e.key === "Escape") onCerrar();
+      if (e.key === "Escape") {
+        onCerrar();
+        return;
+      }
+      if (e.key !== "Tab") return;
+      const focosables = panelRef.current?.querySelectorAll<HTMLElement>(
+        'button, a[href], input, [tabindex]:not([tabindex="-1"])'
+      );
+      if (!focosables || focosables.length === 0) return;
+      const primero = focosables[0];
+      const ultimo = focosables[focosables.length - 1];
+      if (e.shiftKey && document.activeElement === primero) {
+        e.preventDefault();
+        ultimo.focus();
+      } else if (!e.shiftKey && document.activeElement === ultimo) {
+        e.preventDefault();
+        primero.focus();
+      }
     };
     window.addEventListener("keydown", manejarTecla);
-    panelRef.current?.focus();
-    return () => window.removeEventListener("keydown", manejarTecla);
+    return () => {
+      window.removeEventListener("keydown", manejarTecla);
+      disparadorRef.current?.focus();
+    };
   }, [experiencia, onCerrar]);
 
   return (
@@ -43,6 +67,7 @@ export default function ExperienciaModal({ experiencia, onCerrar }: Props) {
             tabIndex={-1}
             role="dialog"
             aria-modal="true"
+            aria-labelledby={tituloId}
             initial={{ opacity: 0, scale: 0.96 }}
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 0.96 }}
@@ -62,6 +87,7 @@ export default function ExperienciaModal({ experiencia, onCerrar }: Props) {
 
             <p className="dato text-xs tenue mb-1">{t(experiencia.periodo, idioma)}</p>
             <h3
+              id={tituloId}
               className="text-lg font-semibold mb-4 pr-6"
               style={{ color: "var(--tinta-titulo)" }}
             >
@@ -73,33 +99,45 @@ export default function ExperienciaModal({ experiencia, onCerrar }: Props) {
               {t(experiencia.detalle ?? experiencia.descripcion, idioma)}
             </p>
 
-            <div
-              className="rounded-[var(--r-medio)] flex flex-col items-center justify-center gap-2 py-8"
-              style={{ background: "var(--fondo)", border: "1px dashed var(--borde)" }}
-            >
-              <svg width={40} height={34} viewBox="0 0 40 34" aria-hidden>
-                <rect
-                  x={2}
-                  y={2}
-                  width={36}
-                  height={26}
-                  rx={3}
-                  fill="none"
-                  stroke="var(--tinta-suave)"
-                  strokeWidth={2}
+            {experiencia.fotos?.[0] ? (
+              <div className="rounded-[var(--r-medio)] overflow-hidden">
+                <img
+                  src={experiencia.fotos[0]}
+                  alt=""
+                  aria-hidden="true"
+                  loading="lazy"
+                  className="w-full h-48 object-cover"
                 />
-                <circle cx={12} cy={12} r={3} fill="none" stroke="var(--tinta-suave)" strokeWidth={2} />
-                <path
-                  d="M4 26 L15 16 L22 22 L28 14 L36 24"
-                  fill="none"
-                  stroke="var(--tinta-suave)"
-                  strokeWidth={2}
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
-              <p className="dato text-xs tenue text-center px-4">{t(d.fotosProximamente, idioma)}</p>
-            </div>
+              </div>
+            ) : (
+              <div
+                className="rounded-[var(--r-medio)] flex flex-col items-center justify-center gap-2 py-8"
+                style={{ background: "var(--fondo)", border: "1px dashed var(--borde)" }}
+              >
+                <svg width={40} height={34} viewBox="0 0 40 34" aria-hidden>
+                  <rect
+                    x={2}
+                    y={2}
+                    width={36}
+                    height={26}
+                    rx={3}
+                    fill="none"
+                    stroke="var(--tinta-suave)"
+                    strokeWidth={2}
+                  />
+                  <circle cx={12} cy={12} r={3} fill="none" stroke="var(--tinta-suave)" strokeWidth={2} />
+                  <path
+                    d="M4 26 L15 16 L22 22 L28 14 L36 24"
+                    fill="none"
+                    stroke="var(--tinta-suave)"
+                    strokeWidth={2}
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </svg>
+                <p className="dato text-xs tenue text-center px-4">{t(d.fotosProximamente, idioma)}</p>
+              </div>
+            )}
           </motion.div>
         </motion.div>
       )}

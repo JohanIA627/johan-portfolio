@@ -17,7 +17,7 @@ export default function Hero() {
   const [contactoAbierto, setContactoAbierto] = useState(false);
 
   return (
-    <section id="home" className="pt-6 pb-2 md:pt-10 md:pb-4 overflow-x-clip">
+    <section id="home" className="pt-6 pb-4 md:pt-10 md:pb-6 overflow-x-clip">
       <div className="contenedor flex flex-col items-center text-center">
         <motion.div
           initial={{ opacity: 0, scale: 0.78 }}
@@ -45,8 +45,8 @@ export default function Hero() {
             </div>
           </div>
 
-          <span
-            className="absolute top-0 left-0 leading-tight text-left"
+          <h1
+            className="absolute top-0 left-0 leading-tight text-left m-0"
             style={{
               color: "var(--tinta-titulo)",
               fontFamily: "var(--font-firma), cursive",
@@ -58,7 +58,7 @@ export default function Hero() {
             }}
           >
             {t(h.nombreCorto, idioma)}
-          </span>
+          </h1>
           <span
             className="absolute bottom-0 right-0 leading-tight text-right"
             style={{

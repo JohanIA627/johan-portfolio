@@ -25,7 +25,12 @@ export default function PlataformasWeb() {
             <span aria-hidden>💻 </span>
             {t(d.titulo, idioma)}
           </h2>
-          <p className="tenue mb-10">{t(d.subtitulo, idioma)}</p>
+          <p
+            className="mb-10 text-lg"
+            style={{ fontFamily: "var(--font-firma), cursive", color: "var(--tinta)" }}
+          >
+            {t(d.subtitulo, idioma)}
+          </p>
         </Reveal>
         <Ingeniero
           pose="laptop"
