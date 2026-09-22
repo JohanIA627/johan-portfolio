@@ -25,8 +25,8 @@ export const diccionario = {
     botonContacto: { es: "Contacto", en: "Contact" },
     botonCV: { es: "Descargar CV", en: "Download CV" },
     bio1: {
-      es: "Soy estudiante de Ingeniería Industrial en la UPB, con base previa en Ingeniería Mecánica (UIS) y experiencia en diseño de equipos y proyectos de ingeniería para la industria de alimentos. Mi enfoque: mejora de procesos, gestión de proyectos y automatización de operaciones con IA.",
-      en: "I'm an Industrial Engineering student at UPB, with a prior background in Mechanical Engineering (UIS) and experience designing equipment and engineering projects for the food industry. My focus: process improvement, project management, and AI-driven operations automation.",
+      es: "Soy estudiante de Ingeniería Industrial en la UPB, con base previa en Ingeniería Mecánica (UIS) y experiencia en diseño de equipos y proyectos de ingeniería para la industria de alimentos.",
+      en: "I'm an Industrial Engineering student at UPB, with a prior background in Mechanical Engineering (UIS) and experience designing equipment and engineering projects for the food industry.",
     },
     bio2: {
       es: "Hoy soy Product manager de una plataforma interna de gestión que diseñé y llevé a producción, y trabajo con datos, procesos y automatización en proyectos reales — siempre con verificación humana de lo que produce la IA.",

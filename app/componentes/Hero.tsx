@@ -11,19 +11,6 @@ import Experiencia from "./Experiencia";
 import ContactoModal from "./ContactoModal";
 import Ingeniero from "./mascota/Ingeniero";
 
-const HERRAMIENTAS = [
-  "Solid Edge",
-  "SolidWorks",
-  "AutoCAD",
-  "Power BI",
-  "Excel / VBA",
-  "SQL / PostgreSQL",
-  "n8n",
-  "Claude Code",
-  "Next.js",
-  "Supabase",
-];
-
 export default function Hero() {
   const { idioma } = useIdioma();
   const h = diccionario.hero;
@@ -110,12 +97,9 @@ export default function Hero() {
               {t(h.bio2, idioma)} <VerificacionHumana />
             </p>
           </RevealItem>
-          <RevealItem as="div">
-            <p className="dato text-xs tenue">{HERRAMIENTAS.join("  ·  ")}</p>
-          </RevealItem>
           <Ingeniero
             pose="engranaje"
-            className="w-[168px] h-[192px] mx-auto mt-4 md:absolute md:mt-0 md:-right-10 md:bottom-0 md:translate-y-1/3"
+            className="w-[140px] h-[160px] mx-auto mt-6 md:absolute md:mt-0 md:top-full md:right-6 md:-translate-y-4"
           />
         </RevealGrupo>
 

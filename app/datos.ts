@@ -17,6 +17,7 @@ export const experiencias: Experiencia[] = [
     rol: { es: "Dibujante mecánico", en: "Mechanical Draftsman" },
     empresa: "IAF Ingeniería",
     emoji: "📐",
+    fotos: ["/fotos/iaf.jpg"],
     descripcion: {
       es: "Planos de fabricación y montaje en Solid Edge, SolidWorks y AutoCAD; modelado 3D y renders para presentación de proyectos, en una empresa de diseño y fabricación de equipos para la industria de alimentos.",
       en: "Manufacturing and assembly drawings in Solid Edge, SolidWorks, and AutoCAD; 3D modeling and renders for project presentations, at a design and manufacturing company for the food industry.",
@@ -27,6 +28,7 @@ export const experiencias: Experiencia[] = [
     rol: { es: "Cofundador", en: "Co-founder" },
     empresa: "Always Ahead",
     emoji: "🤝",
+    fotos: ["/fotos/always-ahead.jpg"],
     descripcion: {
       es: "Iniciativa junto a otros emprendedores para crear una comunidad de startups en Santander: organización de eventos y construcción de la red de contactos entre emprendedores y aliados institucionales.",
       en: "Initiative with other entrepreneurs to build a startup community in Santander: organized events and built the network of contacts among entrepreneurs and institutional partners.",
@@ -37,6 +39,7 @@ export const experiencias: Experiencia[] = [
     rol: { es: "Ingeniero de proyectos", en: "Project Engineer" },
     empresa: "DSM Latinoamérica",
     emoji: "🏭",
+    fotos: ["/fotos/dsm.jpg"],
     descripcion: {
       es: "Diseño, planos de fabricación y acompañamiento de construcción de un sistema CIP de 15.000 L/h para Indulácteos. En paralelo, construí en Excel/VBA una herramienta de trazabilidad de consumibles que reveló que una sola máquina consumía varios millones de pesos que la empresa no estaba cuantificando.",
       en: "Design, manufacturing drawings, and construction oversight of a 15,000 L/h CIP system for Indulácteos. In parallel, I built an Excel/VBA consumables-traceability tool that revealed a single machine was consuming several million pesos the company wasn't tracking.",
@@ -48,6 +51,7 @@ export const experiencias: Experiencia[] = [
     rol: { es: "Colaborador en marketing y estrategia", en: "Marketing & Strategy Collaborator" },
     empresa: "Cuché Cuté",
     emoji: "🎯",
+    fotos: ["/fotos/cuche-cute.png"],
     descripcion: {
       es: "Colaboración con una marca de café de especialidad en su prelanzamiento: estrategia de marca, contenido para redes, estudio de mercado y tienda en línea en Shopify.",
       en: "Collaboration with a specialty coffee brand during its pre-launch stage: brand strategy, social media content, market research, and an online store on Shopify.",
@@ -58,6 +62,7 @@ export const experiencias: Experiencia[] = [
     rol: { es: "Diseñador mecánico independiente", en: "Independent Mechanical Designer" },
     empresa: "Innovameq",
     emoji: "⚙️",
+    fotos: ["/fotos/innovameq.jpg"],
     descripcion: {
       es: "Diseño para Indunilo de una dosificadora de tornillo sin fin con tolva de 2 m³ en acero inoxidable: modelado, planos de fabricación y supervisión de construcción y ensamble.",
       en: "Design for Indunilo of a screw-feeder doser with a 2 m³ hopper in stainless steel: modeling, manufacturing drawings, and construction/assembly oversight.",
@@ -69,6 +74,7 @@ export const experiencias: Experiencia[] = [
     rol: { es: "Product manager", en: "Product Manager" },
     empresa: "Proinnprot SAS",
     emoji: "🧠",
+    fotos: ["/fotos/proinnprot.png"],
     descripcion: {
       es: "Definición y liderazgo del desarrollo de una plataforma interna que digitalizó la gestión de propiedad horizontal de la empresa, hoy en uso activo por administradores, gerentes y consejos.",
       en: "Definition and development leadership of an internal platform that digitized the company's property management operations, now in active use by administrators, managers, and boards.",
@@ -136,7 +142,7 @@ export const proyectos: Proyecto[] = [
       { es: "Row Level Security", en: "Row Level Security" },
       { es: "n8n", en: "n8n" },
     ],
-    estado: { es: "En producción · capturas próximamente", en: "In production · screenshots coming soon" },
+    estado: { es: "En producción", en: "In production" },
   },
   {
     id: "fl-shoes",

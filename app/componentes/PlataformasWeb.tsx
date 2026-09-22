@@ -4,9 +4,13 @@ import { proyectos } from "../datos";
 import { diccionario } from "../i18n/diccionario";
 import { t, useIdioma } from "../i18n/contexto";
 import Reveal from "./Reveal";
-import ArchivadorServidor from "./iconos/ArchivadorServidor";
 import GrafoNodos from "./iconos/GrafoNodos";
 import Ingeniero from "./mascota/Ingeniero";
+
+// Captura y enlace en vivo por id de proyecto (solo los que ya tienen despliegue público).
+const RECURSOS_PLATAFORMAS: Record<string, { url: string; imagen: string }> = {
+  "gestion-ph": { url: "https://gestion-ph-v22z.vercel.app/", imagen: "/fotos/proinnprot.png" },
+};
 
 export default function PlataformasWeb() {
   const { idioma } = useIdioma();
@@ -50,7 +54,30 @@ export default function PlataformasWeb() {
                     boxShadow: "var(--sombra)",
                   }}
                 >
-                  <ArchivadorServidor />
+                  {(() => {
+                    const recurso = RECURSOS_PLATAFORMAS[p.id];
+                    const nombreProyecto = t(p.titulo, idioma);
+                    if (!recurso) return null;
+                    const etiquetaAbrir =
+                      idioma === "en" ? `Open ${nombreProyecto}` : `Abrir ${nombreProyecto}`;
+                    return (
+                      <a
+                        href={recurso.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label={etiquetaAbrir}
+                        className="block w-full h-full"
+                      >
+                        <img
+                          src={recurso.imagen}
+                          alt={nombreProyecto}
+                          width={260}
+                          height={160}
+                          className="w-full h-full object-cover"
+                        />
+                      </a>
+                    );
+                  })()}
                 </div>
                 <div className="flex-1">
                   <h3 className="text-lg font-semibold mb-2" style={{ color: "var(--tinta-titulo)" }}>
@@ -83,6 +110,17 @@ export default function PlataformasWeb() {
                       >
                         {t(p.estado, idioma)}
                       </span>
+                    )}
+                    {RECURSOS_PLATAFORMAS[p.id] && (
+                      <a
+                        href={RECURSOS_PLATAFORMAS[p.id].url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="dato text-[11px] underline underline-offset-2"
+                        style={{ color: "var(--acento)" }}
+                      >
+                        {RECURSOS_PLATAFORMAS[p.id].url.replace(/^https?:\/\//, "").replace(/\/$/, "")}
+                      </a>
                     )}
                   </div>
                 </div>

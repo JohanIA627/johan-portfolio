@@ -6,6 +6,18 @@ import { t, useIdioma } from "../i18n/contexto";
 import Reveal from "./Reveal";
 import Ingeniero from "./mascota/Ingeniero";
 
+// Placeholder temporal (LoremFlickr) hasta que existan capturas reales de cada proyecto académico.
+const FOTO_TEMA: Record<string, { tags: string; lock: number }> = {
+  "fl-shoes": { tags: "shoe-factory,manufacturing", lock: 1 },
+  mermelatte: { tags: "jam,coffee", lock: 2 },
+  "tablero-tic": { tags: "dashboard,data", lock: 3 },
+  "prospectiva-hotel-punta-diamante": { tags: "luxury-hotel,resort", lock: 4 },
+};
+function urlFoto(id: string) {
+  const tema = FOTO_TEMA[id] ?? { tags: "engineering,industry", lock: 0 };
+  return `https://loremflickr.com/640/400/${tema.tags}?lock=${tema.lock}`;
+}
+
 export default function ProyectosAcademicos() {
   const { idioma } = useIdioma();
   const d = diccionario.proyectosAcademicos;
@@ -28,37 +40,46 @@ export default function ProyectosAcademicos() {
         <div className="grid md:grid-cols-2 gap-6">
           {proyectosAcademicos.map((p, i) => (
             <Reveal key={p.id} delay={i * 0.08}>
-              <article id={p.id} className="tarjeta p-6 md:p-7 scroll-mt-24 h-full">
-                <div className="flex flex-wrap items-start justify-between gap-2 mb-1">
-                  <h3
-                    className="text-lg font-semibold flex-1 min-w-[60%]"
-                    style={{ color: "var(--tinta-titulo)" }}
-                  >
-                    {p.emoji && <span aria-hidden>{p.emoji} </span>}
-                    {t(p.titulo, idioma)}
-                  </h3>
-                </div>
-                <p className="tenue text-sm mb-3">{t(p.contexto, idioma)}</p>
-                <p className="text-sm mb-4" style={{ color: "var(--tinta)" }}>
-                  {t(p.descripcion, idioma)}
-                </p>
-                <div className="flex flex-wrap items-center gap-2">
-                  <p className="dato text-[11px] tenue">
-                    {p.stack.map((s) => t(s, idioma)).join("  ·  ")}
+              <article id={p.id} className="tarjeta scroll-mt-24 h-full overflow-hidden">
+                <img
+                  src={urlFoto(p.id)}
+                  alt=""
+                  aria-hidden="true"
+                  loading="lazy"
+                  className="w-full h-40 object-cover"
+                />
+                <div className="p-6 md:p-7">
+                  <div className="flex flex-wrap items-start justify-between gap-2 mb-1">
+                    <h3
+                      className="text-lg font-semibold flex-1 min-w-[60%]"
+                      style={{ color: "var(--tinta-titulo)" }}
+                    >
+                      {p.emoji && <span aria-hidden>{p.emoji} </span>}
+                      {t(p.titulo, idioma)}
+                    </h3>
+                  </div>
+                  <p className="tenue text-sm mb-3">{t(p.contexto, idioma)}</p>
+                  <p className="text-sm mb-4" style={{ color: "var(--tinta)" }}>
+                    {t(p.descripcion, idioma)}
                   </p>
+                  <div className="flex flex-wrap items-center gap-2">
+                    <p className="dato text-[11px] tenue">
+                      {p.stack.map((s) => t(s, idioma)).join("  ·  ")}
+                    </p>
+                  </div>
+                  {p.estado && (
+                    <p
+                      className="dato text-[11px] mt-3 px-2.5 py-0.5 rounded-full inline-block"
+                      style={{
+                        background: "var(--fondo)",
+                        color: "var(--acento)",
+                        border: "1px solid var(--borde)",
+                      }}
+                    >
+                      {t(p.estado, idioma)}
+                    </p>
+                  )}
                 </div>
-                {p.estado && (
-                  <p
-                    className="dato text-[11px] mt-3 px-2.5 py-0.5 rounded-full inline-block"
-                    style={{
-                      background: "var(--fondo)",
-                      color: "var(--acento)",
-                      border: "1px solid var(--borde)",
-                    }}
-                  >
-                    {t(p.estado, idioma)}
-                  </p>
-                )}
               </article>
             </Reveal>
           ))}

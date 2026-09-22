@@ -8,23 +8,6 @@ import Reveal from "./Reveal";
 import ExperienciaModal from "./ExperienciaModal";
 import HallazgoConsumibles from "./iconos/HallazgoConsumibles";
 
-// Palabras clave temáticas para la foto de portada de cada tarjeta — son
-// placeholders (servicio externo LoremFlickr) hasta que Johan pase las fotos
-// reales de cada proyecto; `lock` fija la misma foto en cada recarga.
-const FOTO_TEMA: Record<string, { tags: string; lock: number }> = {
-  "IAF Ingeniería": { tags: "mechanical,engineering", lock: 1 },
-  "Always Ahead": { tags: "startup,team", lock: 2 },
-  "DSM Latinoamérica": { tags: "factory,industrial", lock: 3 },
-  "Cuché Cuté": { tags: "coffee,shop", lock: 4 },
-  Innovameq: { tags: "steel,machinery", lock: 5 },
-  "Proinnprot SAS": { tags: "technology,office", lock: 6 },
-};
-
-function urlFoto(empresa: string) {
-  const tema = FOTO_TEMA[empresa] ?? { tags: "engineering,industry", lock: 0 };
-  return `https://loremflickr.com/640/400/${tema.tags}?lock=${tema.lock}`;
-}
-
 export default function Experiencia() {
   const { idioma } = useIdioma();
   const [seleccionada, setSeleccionada] = useState<ExperienciaTipo | null>(null);
@@ -45,13 +28,17 @@ export default function Experiencia() {
               onClick={() => setSeleccionada(exp)}
               className="tarjeta text-left w-full h-full flex flex-col cursor-pointer overflow-hidden"
             >
-              <img
-                src={urlFoto(exp.empresa)}
-                alt=""
-                aria-hidden="true"
-                loading="lazy"
-                className="w-full h-40 object-cover"
-              />
+              {exp.fotos?.[0] ? (
+                <img
+                  src={exp.fotos[0]}
+                  alt=""
+                  aria-hidden="true"
+                  loading="lazy"
+                  className="w-full h-40 object-cover"
+                />
+              ) : (
+                <div className="w-full h-40" style={{ background: "var(--tarjeta-fondo, #e5e5e5)" }} aria-hidden="true" />
+              )}
               <div className="p-6 flex flex-col flex-1">
                 <p className="dato text-xs tenue mb-1">{t(exp.periodo, idioma)}</p>
                 <p
