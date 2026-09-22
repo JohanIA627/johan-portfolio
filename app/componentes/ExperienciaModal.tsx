@@ -5,6 +5,7 @@ import { AnimatePresence, motion } from "motion/react";
 import { diccionario } from "../i18n/diccionario";
 import { t, useIdioma } from "../i18n/contexto";
 import type { Experiencia as ExperienciaTipo } from "../datos";
+import SelloConstruccion from "./SelloConstruccion";
 
 type Props = {
   experiencia: ExperienciaTipo | null;
@@ -100,7 +101,7 @@ export default function ExperienciaModal({ experiencia, onCerrar }: Props) {
             </p>
 
             {experiencia.fotos?.[0] ? (
-              <div className="rounded-[var(--r-medio)] overflow-hidden">
+              <div className="relative rounded-[var(--r-medio)] overflow-hidden">
                 <img
                   src={experiencia.fotos[0]}
                   alt=""
@@ -108,6 +109,7 @@ export default function ExperienciaModal({ experiencia, onCerrar }: Props) {
                   loading="lazy"
                   className="w-full h-48 object-cover"
                 />
+                <SelloConstruccion />
               </div>
             ) : (
               <div

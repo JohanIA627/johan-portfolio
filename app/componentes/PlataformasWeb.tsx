@@ -6,6 +6,7 @@ import { t, useIdioma } from "../i18n/contexto";
 import Reveal from "./Reveal";
 import GrafoNodos from "./iconos/GrafoNodos";
 import Ingeniero from "./mascota/Ingeniero";
+import SelloConstruccion from "./SelloConstruccion";
 
 // Captura y enlace en vivo por id de proyecto (solo los que ya tienen despliegue público).
 const RECURSOS_PLATAFORMAS: Record<string, { url: string; imagen: string }> = {
@@ -51,7 +52,7 @@ export default function PlataformasWeb() {
                   {String(i + 1).padStart(2, "0")}
                 </span>
                 <div
-                  className="shrink-0 rounded-[var(--r-grande)] overflow-hidden"
+                  className="relative shrink-0 rounded-[var(--r-grande)] overflow-hidden"
                   style={{
                     width: "100%",
                     maxWidth: 260,
@@ -59,6 +60,7 @@ export default function PlataformasWeb() {
                     boxShadow: "var(--sombra)",
                   }}
                 >
+                  <SelloConstruccion />
                   {(() => {
                     const recurso = RECURSOS_PLATAFORMAS[p.id];
                     const nombreProyecto = t(p.titulo, idioma);

@@ -1,11 +1,10 @@
 "use client";
 
-import CintaPeligro from "./iconos/CintaPeligro";
 import Taladro from "./iconos/Taladro";
 import Volqueta from "./iconos/Volqueta";
 import ConoSeguridad from "./iconos/ConoSeguridad";
 import CarretillaObra from "./iconos/CarretillaObra";
-import Ingeniero from "./mascota/Ingeniero";
+import SelloConstruccion from "./SelloConstruccion";
 
 // Escena "en construcción" para proyectos sin capturas reales todavía:
 // cinta de peligro colgando en X + la mascota (ya trae casco y chaleco en
@@ -23,11 +22,8 @@ export default function EnConstruccion({ indice }: { indice: number }) {
       style={{ background: "var(--fondo)" }}
       aria-hidden="true"
     >
-      <CintaPeligro className="absolute inset-0 w-full h-full" />
-      <div className="absolute bottom-0 left-3 flex items-end gap-1">
-        <Ingeniero pose="plano" className="w-16 h-20" />
-        <Herramienta className="w-10 h-10 mb-1" />
-      </div>
+      <SelloConstruccion />
+      <Herramienta className="absolute bottom-1 left-16 w-10 h-10" />
     </div>
   );
 }
