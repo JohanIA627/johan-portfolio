@@ -19,8 +19,12 @@ export const experiencias: Experiencia[] = [
     emoji: "📐",
     fotos: ["/fotos/iaf.jpg"],
     descripcion: {
-      es: "Planos de fabricación y montaje en Solid Edge, SolidWorks y AutoCAD; modelado 3D y renders para presentación de proyectos, en una empresa de diseño y fabricación de equipos para la industria de alimentos.",
-      en: "Manufacturing and assembly drawings in Solid Edge, SolidWorks, and AutoCAD; 3D modeling and renders for project presentations, at a design and manufacturing company for the food industry.",
+      es: "Planos de fabricación y montaje, modelado 3D y apoyo en compras y diseño de maquinaria para la industria de alimentos.",
+      en: "Manufacturing and assembly drawings, 3D modeling, and support with procurement and machinery design for the food industry.",
+    },
+    detalle: {
+      es: "En IAF Ingeniería, una empresa de diseño y fabricación de equipos para la industria de alimentos, trabajé como dibujante mecánico entre 2021 y 2022. Hacía los planos de fabricación y montaje en Solid Edge, SolidWorks y AutoCAD, y también modelaba en 3D y armaba los renders con los que el equipo presentaba los proyectos a los clientes. Aparte del dibujo, apoyaba las compras de materiales e insumos y el contacto con proveedores, y colaboraba en el desarrollo de ingeniería y diseño de la maquinaria. Fue mi primer contacto real con cómo se traduce una idea de máquina en un plano que alguien más va a construir.",
+      en: "At IAF Ingeniería, a company that designs and builds equipment for the food industry, I worked as a mechanical draftsman from 2021 to 2022. I produced manufacturing and assembly drawings in Solid Edge, SolidWorks, and AutoCAD, and also built 3D models and renders the team used to present projects to clients. Beyond drafting, I supported material and supply purchasing, dealt with suppliers, and helped with engineering development and machinery design. It was my first real exposure to how a machine idea turns into a drawing someone else can actually build from.",
     },
   },
   {
@@ -30,8 +34,12 @@ export const experiencias: Experiencia[] = [
     emoji: "🤝",
     fotos: ["/fotos/always-ahead.jpg"],
     descripcion: {
-      es: "Iniciativa junto a otros emprendedores para crear una comunidad de startups en Santander: organización de eventos y construcción de la red de contactos entre emprendedores y aliados institucionales.",
-      en: "Initiative with other entrepreneurs to build a startup community in Santander: organized events and built the network of contacts among entrepreneurs and institutional partners.",
+      es: "Comunidad de startups en Santander, cofundada con otros emprendedores: eventos y red de contactos con el ecosistema S-innova de la UIS.",
+      en: "Startup community in Santander, co-founded with other entrepreneurs: events and a contact network with UIS's S-innova ecosystem.",
+    },
+    detalle: {
+      es: "Entre marzo y junio de 2023 fui cofundador de Always Ahead, una iniciativa que armamos junto con otros emprendedores para crear una comunidad de startups en Santander. Nos encargábamos de organizar eventos y de tejer la red de contactos entre emprendedores y aliados institucionales, en particular con S-innova, el ecosistema de emprendimiento de la UIS. Fue una experiencia corta pero que me enseñó lo que cuesta sostener una comunidad desde cero: convocar, coordinar personas con intereses distintos y mantener vivo el interés más allá del primer evento. De ahí me quedó el gusto por conectar gente y por entender el ecosistema emprendedor de la región.",
+      en: "Between March and June 2023, I co-founded Always Ahead, an initiative I built together with other entrepreneurs to create a startup community in Santander. We organized events and worked on building the network of contacts between entrepreneurs and institutional allies, in particular S-innova, the UIS entrepreneurship ecosystem. It was a short experience, but it taught me what it takes to keep a community alive from scratch: getting people to show up, coordinating people with different interests, and keeping momentum going beyond the first event. It left me with a real interest in connecting people and understanding the entrepreneurial ecosystem of the region.",
     },
   },
   {
@@ -41,8 +49,12 @@ export const experiencias: Experiencia[] = [
     emoji: "🏭",
     fotos: ["/fotos/dsm.jpg"],
     descripcion: {
-      es: "Diseño, planos de fabricación y acompañamiento de construcción de un sistema CIP de 15.000 L/h para Indulácteos. En paralelo, construí en Excel/VBA una herramienta de trazabilidad de consumibles que reveló que una sola máquina consumía varios millones de pesos que la empresa no estaba cuantificando.",
-      en: "Design, manufacturing drawings, and construction oversight of a 15,000 L/h CIP system for Indulácteos. In parallel, I built an Excel/VBA consumables-traceability tool that revealed a single machine was consuming several million pesos the company wasn't tracking.",
+      es: "Diseño y construcción de un sistema CIP de 15.000 L/h para Indulácteos, e inventarios y trazabilidad de consumibles en Excel/VBA.",
+      en: "Design and construction of a 15,000 L/h CIP system for Indulácteos, plus consumables tracking and inventory tools in Excel/VBA.",
+    },
+    detalle: {
+      es: "En DSM Latinoamérica participé en el diseño y los planos de fabricación de un sistema CIP de 15.000 L/h para Indulácteos, un cliente del sector lácteo, y acompañé la construcción hasta la entrega, junto con el análisis de precios unitarios y el manual de operación. En paralelo, construí en Excel/VBA una herramienta para llevar la trazabilidad de los consumibles de la planta. Ahí encontré algo que nadie había visto: una sola máquina estaba consumiendo varios millones de pesos que la empresa nunca había cuantificado. También levanté el inventario general de maquinaria y equipos, y el de herramientas y elementos de protección personal por operario — información que hasta entonces no existía centralizada en ningún lado.",
+      en: "At DSM Latinoamérica I took part in the design and manufacturing drawings of a 15,000 L/h CIP system for Indulácteos, a dairy-sector client, and stayed involved through construction and delivery, along with the unit-price analysis and operation manual. In parallel, I built an Excel/VBA tool to track the plant's consumables. That's where I found something nobody had noticed: a single machine was consuming several million pesos that the company had never quantified. I also put together the plant's full inventory of machinery and equipment, plus the tools and PPE assigned to each operator — information that, until then, didn't exist in one place.",
     },
     proyectoId: "cip-indulacteos",
   },
@@ -53,8 +65,12 @@ export const experiencias: Experiencia[] = [
     emoji: "🎯",
     fotos: ["/fotos/cuche-cute.png"],
     descripcion: {
-      es: "Colaboración con una marca de café de especialidad en su prelanzamiento: estrategia de marca, contenido para redes, estudio de mercado y tienda en línea en Shopify.",
-      en: "Collaboration with a specialty coffee brand during its pre-launch stage: brand strategy, social media content, market research, and an online store on Shopify.",
+      es: "Colaboración externa con una marca de café de especialidad en prelanzamiento: estrategia de marca, contenido y tienda en Shopify.",
+      en: "External collaboration with a specialty coffee brand during its pre-launch: brand strategy, content, and a Shopify store.",
+    },
+    detalle: {
+      es: "Colaboré como externo con Cuché Cuté, una marca de café de especialidad, durante su etapa de prelanzamiento. Ayudé a definir la estrategia de marca y el storytelling con el que se iba a presentar al mercado, y preparé el contenido para redes del primer mes: guiones y un calendario de 9 piezas. También hice un estudio de mercado para pensar cómo posicionar la marca en la región, y monté la tienda en línea en Shopify por donde hoy vende.",
+      en: "I collaborated externally with Cuché Cuté, a specialty coffee brand, during its pre-launch stage. I helped shape the brand strategy and the storytelling it would use to introduce itself to the market, and put together the first month's social media content: scripts and a calendar of 9 pieces. I also ran a market study to figure out how to position the brand in the region, and set up the Shopify store it sells through today.",
     },
   },
   {
@@ -64,8 +80,12 @@ export const experiencias: Experiencia[] = [
     emoji: "⚙️",
     fotos: ["/fotos/innovameq.jpg"],
     descripcion: {
-      es: "Diseño para Indunilo de una dosificadora de tornillo sin fin con tolva de 2 m³ en acero inoxidable: modelado, planos de fabricación y supervisión de construcción y ensamble.",
-      en: "Design for Indunilo of a screw-feeder doser with a 2 m³ hopper in stainless steel: modeling, manufacturing drawings, and construction/assembly oversight.",
+      es: "Diseño y supervisión de fabricación de una dosificadora industrial en acero inoxidable, como diseñador mecánico independiente para un cliente.",
+      en: "Independent mechanical design and manufacturing oversight of an industrial stainless-steel dosing machine for a client.",
+    },
+    detalle: {
+      es: "Como diseñador mecánico independiente, diseñé para Indunilo una dosificadora de tornillo sin fin con tolva de 2 m³ en acero inoxidable, pensada para pulverizar grasa vegetal con un motorreductor sinfín-corona de 0,5 HP a 42 RPM. Elaboré los planos de fabricación y me hice cargo de la compra de materiales y el análisis de precios unitarios, para que el cliente supiera exactamente en qué se iba cada peso. Acompañé la construcción y el ensamble hasta la entrega, resolviendo en planta los ajustes que todo diseño real necesita cuando pasa del papel a la máquina. Trabajar así, de punta a punta y sin equipo detrás, me enseñó a sostener cada decisión técnica y económica del proyecto.",
+      en: "As an independent mechanical designer, I designed a stainless-steel screw-feeder dosing machine with a 2 m³ hopper for Indunilo, built to pulverize vegetable fat using a 0.5 HP, 42 RPM worm-gear motor. I produced the manufacturing drawings and handled material procurement and unit-price analysis, so the client knew exactly where every peso went. I followed the build and assembly through to delivery, solving the on-the-floor adjustments that every design needs once it leaves the paper. Working end-to-end, without a team behind me, taught me to own every technical and financial decision on the project.",
     },
     proyectoId: "dosificadora-indunilo",
   },
@@ -76,8 +96,12 @@ export const experiencias: Experiencia[] = [
     emoji: "🧠",
     fotos: ["/fotos/proinnprot.png"],
     descripcion: {
-      es: "Definición y liderazgo del desarrollo de una plataforma interna que digitalizó la gestión de propiedad horizontal de la empresa, hoy en uso activo por administradores, gerentes y consejos.",
-      en: "Definition and development leadership of an internal platform that digitized the company's property management operations, now in active use by administrators, managers, and boards.",
+      es: "Plataforma interna para administración de propiedad horizontal: reemplaza registros en papel por gestión digital de tareas, contratos, mantenimientos y más.",
+      en: "Internal platform for property management: replaces paper logs with real-time digital tracking of tasks, contracts, and maintenance.",
+    },
+    detalle: {
+      es: "Como product manager en Proinnprot, definí y lideré de principio a fin el desarrollo de una plataforma que reemplazó el registro manual en cuadernos y carpetas físicas por gestión digital en tiempo real, para una empresa que administra propiedad horizontal. Diseñé módulos para compromisos y tareas diarias, contratos con renovación automática y preaviso, contratistas con control de pólizas y certificados por vencer, mantenimientos con evidencia obligatoria, y llamados de atención con su propio flujo de autorización. Los informes que antes tomaban días de armar a mano ahora se generan al instante, lo que le devuelve tiempo real a quien administra. Hoy la usan administradores, gerentes y presidentes de consejo en varios conjuntos residenciales, y ese uso diario es la prueba de que resolvió un problema real.",
+      en: "As product manager at Proinnprot, I defined and led the end-to-end development of a platform that replaced manual record-keeping in notebooks and paper folders with real-time digital management, for a company that manages properties under horizontal ownership (condo-style residential complexes). I designed modules for daily commitments and tasks, contracts with automatic renewal and advance notice, contractors with tracking of insurance policies and certificates nearing expiration, maintenance work with mandatory evidence, and attention notices with their own approval flow. Reports that used to take days to put together by hand are now generated instantly, giving administrators real time back. It's now used daily by administrators, managers, and board presidents across several residential complexes, and that daily use is the real proof it solved a real problem.",
     },
     proyectoId: "gestion-ph",
   },
