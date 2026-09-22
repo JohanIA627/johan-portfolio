@@ -15,7 +15,7 @@ export default function ProyectosIngenieria() {
   const proyectosIngenieria = proyectos.filter((p) => p.categoria === "ingenieria");
 
   return (
-    <section id="proyectos-ingenieria" className="py-14 md:py-20">
+    <section id="proyectos-ingenieria" className="pt-4 pb-14 md:pt-6 md:pb-20">
       <div className="contenedor relative">
         <Reveal>
           <h2 className="text-2xl font-bold mb-2" style={{ fontFamily: "var(--font-firma), cursive" }}>
