@@ -116,12 +116,14 @@ export type Proyecto = {
   stack: Bilingue[];
   estado?: Bilingue;
   emoji?: string;
+  modelo3d?: string;
 };
 
 export const proyectos: Proyecto[] = [
   {
     id: "cip-indulacteos",
     categoria: "ingenieria",
+    modelo3d: "/models/cip.glb",
     titulo: { es: "Sistema CIP de 15.000 L/h", en: "15,000 L/h CIP System" },
     contexto: { es: "DSM Latinoamérica · para Indulácteos", en: "DSM Latinoamérica · for Indulácteos" },
     descripcion: {

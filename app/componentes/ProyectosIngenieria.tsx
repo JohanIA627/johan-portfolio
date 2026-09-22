@@ -33,13 +33,15 @@ export default function ProyectosIngenieria() {
             <Reveal key={p.id} delay={i * 0.08}>
               <article id={p.id} className="tarjeta p-6 md:p-7 scroll-mt-24 h-full">
                 <ModelViewer
-                  src="/models/muestra.glb"
+                  src={p.modelo3d ?? "/models/muestra.glb"}
                   alt={t(p.titulo, idioma)}
                   ayuda={t(d.ayudaVisor, idioma)}
                 />
-                <p className="dato text-[10px] mt-2 mb-1" style={{ color: "var(--acento)" }}>
-                  {t(d.avisoMuestra, idioma)}
-                </p>
+                {!p.modelo3d && (
+                  <p className="dato text-[10px] mt-2 mb-1" style={{ color: "var(--acento)" }}>
+                    {t(d.avisoMuestra, idioma)}
+                  </p>
+                )}
                 <div className="flex flex-wrap items-start justify-between gap-2 mt-3 mb-1">
                   <h3
                     className="text-lg font-semibold flex-1 min-w-[60%] inline-flex items-center gap-2"
