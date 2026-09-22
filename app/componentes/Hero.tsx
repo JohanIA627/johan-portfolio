@@ -17,7 +17,7 @@ export default function Hero() {
   const [contactoAbierto, setContactoAbierto] = useState(false);
 
   return (
-    <section id="home" className="pt-6 pb-14 md:pt-10 md:pb-20 overflow-x-clip">
+    <section id="home" className="pt-6 pb-2 md:pt-10 md:pb-4 overflow-x-clip">
       <div className="contenedor flex flex-col items-center text-center">
         <motion.div
           initial={{ opacity: 0, scale: 0.78 }}
