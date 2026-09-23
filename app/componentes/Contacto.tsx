@@ -13,7 +13,7 @@ export default function Contacto() {
     <footer
       id="contacto"
       className="py-14 md:py-20"
-      style={{ background: "var(--tinta-titulo)" }}
+      style={{ background: "var(--pie-fondo)", borderTop: "1px solid var(--pie-borde)" }}
     >
       <div className="contenedor max-w-2xl text-center relative">
         <Ingeniero pose="saludo" className="mx-auto w-[120px] h-[144px] mb-2" />
@@ -21,25 +21,25 @@ export default function Contacto() {
           <RevealItem as="div">
             <h2
               className="text-2xl font-bold mb-3"
-              style={{ color: "#fff", fontFamily: "var(--font-firma), cursive" }}
+              style={{ color: "var(--pie-texto)", fontFamily: "var(--font-firma), cursive" }}
             >
               {t(d.titulo, idioma)}
             </h2>
-            <p className="mb-8" style={{ color: "rgba(255,255,255,0.75)" }}>
+            <p className="mb-8" style={{ color: "var(--pie-texto-suave)" }}>
               {t(d.texto, idioma)}
             </p>
           </RevealItem>
           <RevealItem as="div" className="flex flex-wrap gap-3 justify-center mb-10">
             <a
               className="boton"
-              style={{ background: "var(--azul-400)", color: "var(--tinta-titulo)" }}
+              style={{ background: "var(--pie-boton-fondo)", color: "var(--pie-boton-texto)" }}
               href="mailto:johan.rondon27@hotmail.com"
             >
               {t(d.correo, idioma)}
             </a>
             <a
               className="boton secundario"
-              style={{ background: "transparent", color: "#fff", borderColor: "rgba(255,255,255,0.3)" }}
+              style={{ background: "transparent", color: "var(--pie-texto)", borderColor: "var(--pie-linea)" }}
               href="https://www.linkedin.com/in/johansebastianrondon"
               target="_blank"
               rel="noopener noreferrer"
@@ -48,7 +48,7 @@ export default function Contacto() {
             </a>
           </RevealItem>
           <RevealItem as="div">
-            <p className="dato text-xs" style={{ color: "rgba(255,255,255,0.5)" }}>
+            <p className="dato text-xs" style={{ color: "var(--pie-texto-tenue)" }}>
               {t(d.ubicacion, idioma)}
             </p>
           </RevealItem>

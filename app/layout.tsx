@@ -1,6 +1,7 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Inter, Fuzzy_Bubbles } from "next/font/google";
 import { ProveedorIdioma } from "./i18n/contexto";
+import { ProveedorTema } from "./tema/contexto";
 import ProveedorMovimiento from "./componentes/ProveedorMovimiento";
 import "./globals.css";
 
@@ -39,13 +40,34 @@ export const metadata: Metadata = {
   },
 };
 
+// Color de la barra del navegador en móvil, según el tema del sistema
+export const viewport: Viewport = {
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#f6f8fb" },
+    { media: "(prefers-color-scheme: dark)", color: "#0e1116" },
+  ],
+};
+
+// Corre antes de pintar: fija el tema guardado (o el del sistema) para que
+// no haya destello de tema claro al abrir en oscuro.
+const scriptTema = `(function(){try{var t=localStorage.getItem("johan-portfolio:tema");if(t!=="claro"&&t!=="oscuro"){t=window.matchMedia("(prefers-color-scheme: dark)").matches?"oscuro":"claro"}document.documentElement.setAttribute("data-tema",t)}catch(e){}})();`;
+
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="es" className={`${inter.variable} ${fuzzyBubbles.variable} h-full antialiased`}>
+    <html
+      lang="es"
+      className={`${inter.variable} ${fuzzyBubbles.variable} h-full antialiased`}
+      suppressHydrationWarning
+    >
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: scriptTema }} />
+      </head>
       <body className="min-h-full flex flex-col">
-        <ProveedorMovimiento>
-          <ProveedorIdioma>{children}</ProveedorIdioma>
-        </ProveedorMovimiento>
+        <ProveedorTema>
+          <ProveedorMovimiento>
+            <ProveedorIdioma>{children}</ProveedorIdioma>
+          </ProveedorMovimiento>
+        </ProveedorTema>
       </body>
     </html>
   );

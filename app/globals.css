@@ -1,6 +1,7 @@
 @import "tailwindcss";
 
 :root {
+  color-scheme: light;
   /* Paleta: negro/gris/blanco + un solo acento en azul cielo — nada de
      navy corporativo ni de índigo/violeta genérico de plantilla. */
   --tinta: #33383f;
@@ -34,6 +35,22 @@
   --sombra-alta: 0 0 0 1px rgba(50, 50, 93, 0.03), 0 6px 14px -2px rgba(50, 50, 93, 0.12),
     0 3px 6px -2px rgba(0, 0, 0, 0.07);
 
+  /* Variables por tema: barra de navegación, botón principal, bloque de
+     contacto (pie) y fondo de modales. Cada tema las redefine. */
+  --nav-fondo: rgba(246, 249, 252, 0.85);
+  --boton-fondo: var(--tinta-titulo);
+  --boton-fondo-hover: var(--negro-suave);
+  --boton-texto: #fff;
+  --pie-fondo: #14171b;
+  --pie-borde: #14171b;
+  --pie-texto: #fff;
+  --pie-texto-suave: rgba(255, 255, 255, 0.75);
+  --pie-texto-tenue: rgba(255, 255, 255, 0.5);
+  --pie-linea: rgba(255, 255, 255, 0.3);
+  --pie-boton-fondo: var(--azul-400);
+  --pie-boton-texto: #14171b;
+  --overlay: rgba(0, 0, 0, 0.5);
+
   --curva: cubic-bezier(0.32, 0.72, 0, 1);
   --rapido: 180ms;
   --medio: 280ms;
@@ -45,6 +62,48 @@
   --rotulo: var(--font-inter), "Segoe UI Semibold", Tahoma, sans-serif;
   --texto: var(--font-inter), "Segoe UI", Roboto, sans-serif;
   --dato: var(--font-inter), "Segoe UI", Roboto, sans-serif;
+}
+
+/* Tema oscuro: se activa con data-tema="oscuro" en <html>. Gris carbón
+   neutro (no negro puro) y el mismo acento azul cielo, aclarado para que
+   pase AA sobre las tarjetas oscuras. Las variables de la mascota no cambian. */
+:root[data-tema="oscuro"] {
+  color-scheme: dark;
+  --tinta: #c9d1da;
+  --tinta-titulo: #f1f4f8;
+  --tinta-suave: #a39f95; /* 6.54:1 sobre papel oscuro, 7.16:1 sobre fondo */
+  --negro-suave: #dfe5ec;
+  --borde: #2a303a;
+  --fondo: #0e1116;
+  --papel: #171b22;
+
+  --azul-300: #2c5f8f; /* selección de texto: sobre esto el título claro se lee */
+  --acento: #4aa3ec; /* 6.36:1 sobre papel oscuro */
+  --acento-hover: #7bbcf2;
+
+  --sombra: 0 0 0 1px rgba(0, 0, 0, 0.35), 0 2px 5px -1px rgba(0, 0, 0, 0.5),
+    0 1px 3px -1px rgba(0, 0, 0, 0.4);
+  --sombra-alta: 0 0 0 1px rgba(0, 0, 0, 0.4), 0 6px 14px -2px rgba(0, 0, 0, 0.6),
+    0 3px 6px -2px rgba(0, 0, 0, 0.45);
+
+  --nav-fondo: rgba(14, 17, 22, 0.85);
+  --boton-fondo: #f1f4f8;
+  --boton-fondo-hover: #ffffff;
+  --boton-texto: #0e1116;
+  --pie-fondo: #07090c; /* más profundo que el fondo de la página */
+  --pie-borde: #2a303a; /* línea que separa el pie del resto */
+  --pie-texto: #f1f4f8;
+  --pie-texto-suave: rgba(241, 244, 248, 0.75);
+  --pie-texto-tenue: rgba(241, 244, 248, 0.6);
+  --pie-linea: rgba(241, 244, 248, 0.3);
+  --pie-boton-fondo: #4aa3ec;
+  --pie-boton-texto: #0e1116;
+  --overlay: rgba(0, 0, 0, 0.7);
+}
+
+/* Las fotos claras no deslumbran en oscuro (no toca SVG ni la mascota) */
+:root[data-tema="oscuro"] img:not([src$=".svg"]) {
+  filter: brightness(0.92);
 }
 
 * {
@@ -113,8 +172,8 @@ h3 {
   padding: 10px 20px;
   border-radius: var(--r-medio);
   border: none;
-  background: var(--tinta-titulo);
-  color: #fff;
+  background: var(--boton-fondo);
+  color: var(--boton-texto);
   cursor: pointer;
   text-decoration: none;
   display: inline-flex;
@@ -126,10 +185,10 @@ h3 {
 }
 
 .boton:hover {
-  background: var(--negro-suave);
+  background: var(--boton-fondo-hover);
   box-shadow: var(--sombra-alta);
   transform: translateY(-2px);
-  color: #fff;
+  color: var(--boton-texto);
 }
 
 .boton:active {

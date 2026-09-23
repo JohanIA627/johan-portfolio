@@ -55,7 +55,7 @@ export default function ContactoModal({ abierto, onCerrar }: Props) {
           exit={{ opacity: 0 }}
           transition={{ duration: 0.18 }}
           className="fixed inset-0 flex items-center justify-center p-6"
-          style={{ background: "rgba(0,0,0,0.5)", zIndex: 100 }}
+          style={{ background: "var(--overlay)", zIndex: 100 }}
           onClick={onCerrar}
         >
           <motion.div

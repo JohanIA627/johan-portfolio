@@ -5,6 +5,7 @@ import { motion } from "motion/react";
 import { diccionario } from "../i18n/diccionario";
 import { t, useIdioma } from "../i18n/contexto";
 import ToggleIdioma from "./ToggleIdioma";
+import ToggleTema from "./ToggleTema";
 
 const ENLACES: { href: string; clave: keyof typeof diccionario.nav }[] = [
   { href: "#home", clave: "home" },
@@ -56,7 +57,7 @@ export default function NavBar() {
       transition={{ duration: 0.5, ease: CURVA }}
       className="sticky top-0 z-30 backdrop-blur"
       style={{
-        background: "rgba(246, 249, 252, 0.85)",
+        background: "var(--nav-fondo)",
         borderBottom: "1px solid var(--borde)",
       }}
     >
@@ -87,25 +88,34 @@ export default function NavBar() {
           </div>
         </div>
 
-        <ToggleIdioma idioma={idioma} cambiarIdioma={cambiarIdioma} />
+        <div className="flex items-center gap-3">
+          <ToggleIdioma idioma={idioma} cambiarIdioma={cambiarIdioma} />
+          {/* En pantallas chicas el selector de tema baja a la segunda fila */}
+          <div className="hidden sm:block">
+            <ToggleTema />
+          </div>
+        </div>
       </div>
 
-      <div className="sm:hidden flex gap-4 text-base px-6 pb-3 -mt-1">
-        {ENLACES.map((e) => (
-          <a
-            key={e.href}
-            href={e.href}
-            className="enlace-nav"
-            style={{
-              color: "var(--tinta-titulo)",
-              fontFamily: "var(--font-firma), cursive",
-              textDecoration: seccionActiva === e.href.slice(1) ? "underline" : "none",
-              textUnderlineOffset: "4px",
-            }}
-          >
-            {t(d[e.clave], idioma)}
-          </a>
-        ))}
+      <div className="sm:hidden flex flex-wrap items-center justify-between gap-x-4 gap-y-2 text-base px-6 pb-3 -mt-1">
+        <div className="flex gap-4">
+          {ENLACES.map((e) => (
+            <a
+              key={e.href}
+              href={e.href}
+              className="enlace-nav"
+              style={{
+                color: "var(--tinta-titulo)",
+                fontFamily: "var(--font-firma), cursive",
+                textDecoration: seccionActiva === e.href.slice(1) ? "underline" : "none",
+                textUnderlineOffset: "4px",
+              }}
+            >
+              {t(d[e.clave], idioma)}
+            </a>
+          ))}
+        </div>
+        <ToggleTema />
       </div>
     </motion.nav>
   );
