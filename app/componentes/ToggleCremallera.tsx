@@ -117,13 +117,13 @@ export default function ToggleCremallera({
   });
 
   return (
-    <div className="inline-flex items-center gap-1" role="group" aria-label={etiquetaGrupo}>
+    <div className="inline-flex items-center gap-0.5 sm:gap-1" role="group" aria-label={etiquetaGrupo}>
       <button
         type="button"
         onClick={() => onCambiar("izquierda")}
         aria-pressed={valor === "izquierda"}
         aria-label={etiquetaIzq}
-        className="dato text-xs font-semibold transition-colors px-2 py-1.5 inline-flex items-center justify-center"
+        className="dato text-xs font-semibold transition-colors px-1 sm:px-2 py-1.5 min-w-6 inline-flex items-center justify-center"
         style={estiloBoton(valor === "izquierda")}
       >
         {izquierda}
@@ -170,7 +170,7 @@ export default function ToggleCremallera({
         onClick={() => onCambiar("derecha")}
         aria-pressed={valor === "derecha"}
         aria-label={etiquetaDer}
-        className="dato text-xs font-semibold transition-colors px-2 py-1.5 inline-flex items-center justify-center"
+        className="dato text-xs font-semibold transition-colors px-1 sm:px-2 py-1.5 min-w-6 inline-flex items-center justify-center"
         style={estiloBoton(valor === "derecha")}
       >
         {derecha}

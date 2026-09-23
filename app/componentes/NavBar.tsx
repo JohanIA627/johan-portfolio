@@ -64,7 +64,7 @@ export default function NavBar() {
       <div className="contenedor flex items-center justify-between h-14">
         <div className="flex items-center gap-6">
           <span
-            className="text-lg font-bold"
+            className="text-sm sm:text-lg font-bold whitespace-nowrap"
             style={{ color: "var(--acento)", fontFamily: "var(--font-firma), cursive" }}
           >
             {t(d.marca, idioma)}
@@ -88,34 +88,28 @@ export default function NavBar() {
           </div>
         </div>
 
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-2 sm:gap-3">
           <ToggleIdioma idioma={idioma} cambiarIdioma={cambiarIdioma} />
-          {/* En pantallas chicas el selector de tema baja a la segunda fila */}
-          <div className="hidden sm:block">
-            <ToggleTema />
-          </div>
+          <ToggleTema />
         </div>
       </div>
 
-      <div className="sm:hidden flex flex-wrap items-center justify-between gap-x-4 gap-y-2 text-base px-6 pb-3 -mt-1">
-        <div className="flex gap-4">
-          {ENLACES.map((e) => (
-            <a
-              key={e.href}
-              href={e.href}
-              className="enlace-nav"
-              style={{
-                color: "var(--tinta-titulo)",
-                fontFamily: "var(--font-firma), cursive",
-                textDecoration: seccionActiva === e.href.slice(1) ? "underline" : "none",
-                textUnderlineOffset: "4px",
-              }}
-            >
-              {t(d[e.clave], idioma)}
-            </a>
-          ))}
-        </div>
-        <ToggleTema />
+      <div className="sm:hidden flex flex-wrap gap-x-4 gap-y-1 text-base px-6 pb-3 -mt-1">
+        {ENLACES.map((e) => (
+          <a
+            key={e.href}
+            href={e.href}
+            className="enlace-nav"
+            style={{
+              color: "var(--tinta-titulo)",
+              fontFamily: "var(--font-firma), cursive",
+              textDecoration: seccionActiva === e.href.slice(1) ? "underline" : "none",
+              textUnderlineOffset: "4px",
+            }}
+          >
+            {t(d[e.clave], idioma)}
+          </a>
+        ))}
       </div>
     </motion.nav>
   );
