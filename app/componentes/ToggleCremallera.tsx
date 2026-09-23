@@ -10,6 +10,9 @@ import { motion } from "motion/react";
 // avanzar sobre la cremallera de forma consistente, no solo deslizarse.
 const ANCHO = 114;
 const ALTO = 46;
+// El mecanismo se dibuja a 114×46 y se reduce a la mitad al mostrarlo, para
+// no rehacer la física del engranaje.
+const ESCALA = 0.5;
 const RADIO = 18;
 const DIAMETRO = RADIO * 2;
 const CENTRO_IZQ = RADIO + 6; // valor izquierdo
@@ -131,28 +134,35 @@ export default function ToggleCremallera({
       <div
         aria-hidden
         onClick={() => onCambiar(activo ? "izquierda" : "derecha")}
-        className="relative overflow-hidden rounded-[10px] cursor-pointer"
-        style={{
-          width: ANCHO,
-          height: ALTO,
-          background: COLOR_PANEL,
-          border: "1px solid var(--borde)",
-        }}
+        className="relative cursor-pointer shrink-0"
+        style={{ width: ANCHO * ESCALA, height: ALTO * ESCALA }}
       >
-        <Cremallera />
-        <motion.div
-          className="absolute pointer-events-none"
-          style={{ top: ALTO - 7 - 2 - DIAMETRO, width: DIAMETRO, height: DIAMETRO }}
-          initial={false}
-          animate={{ x: centroX - RADIO, rotate: rotacion }}
-          transition={
-            instantaneo
-              ? { duration: 0 }
-              : { type: "spring", stiffness: 260, damping: 24, mass: 1 }
-          }
+        <div
+          className="absolute top-0 left-0 overflow-hidden rounded-[10px]"
+          style={{
+            width: ANCHO,
+            height: ALTO,
+            background: COLOR_PANEL,
+            border: "1px solid var(--borde)",
+            transform: `scale(${ESCALA})`,
+            transformOrigin: "top left",
+          }}
         >
-          <Engranaje />
-        </motion.div>
+          <Cremallera />
+          <motion.div
+            className="absolute pointer-events-none"
+            style={{ top: ALTO - 7 - 2 - DIAMETRO, width: DIAMETRO, height: DIAMETRO }}
+            initial={false}
+            animate={{ x: centroX - RADIO, rotate: rotacion }}
+            transition={
+              instantaneo
+                ? { duration: 0 }
+                : { type: "spring", stiffness: 260, damping: 24, mass: 1 }
+            }
+          >
+            <Engranaje />
+          </motion.div>
+        </div>
       </div>
 
       <button
