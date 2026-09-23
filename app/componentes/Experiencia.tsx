@@ -40,7 +40,7 @@ export default function Experiencia() {
                   className="w-full h-40 object-cover"
                 />
               ) : (
-                <div className="w-full h-40" style={{ background: "var(--tarjeta-fondo, #e5e5e5)" }} aria-hidden="true" />
+                <div className="w-full h-40" style={{ background: "var(--borde)" }} aria-hidden="true" />
               )}
               <div className="p-6 flex flex-col flex-1">
                 <p className="dato text-xs tenue mb-1">{t(exp.periodo, idioma)}</p>

@@ -16,9 +16,9 @@ const fuzzyBubbles = Fuzzy_Bubbles({
   weight: ["400", "700"],
 });
 
-const titulo = "Johan Sebastián Rondón — Portafolio";
+const titulo = "Johan Sebastián Rondón | Portafolio";
 const descripcion =
-  "Ingeniero industrial (UPB). Digitalización de procesos, datos y automatización con IA aplicada a operaciones.";
+  "Estudio Ingeniería Industrial en la UPB. Diseño mecánico, datos y automatización de procesos con IA. Busco prácticas profesionales para 2027.";
 
 export const metadata: Metadata = {
   title: titulo,

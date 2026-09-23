@@ -10,76 +10,60 @@ export const diccionario = {
     nombre: { es: "Johan Sebastián Rondón Alvarado", en: "Johan Sebastián Rondón Alvarado" },
     nombreCorto: { es: "Johan Rondón", en: "Johan Rondón" },
     carrera: { es: "Ingeniería Industrial", en: "Industrial Engineering" },
-    titular: {
-      es: "Estudiante de Ingeniería Industrial (UPB)",
-      en: "Industrial Engineering Student (UPB)",
-    },
-    subtitular: {
-      es: "Mejora de procesos y gestión de proyectos · IA aplicada a operaciones · Diseño mecánico en la industria de alimentos.",
-      en: "Process improvement and project management · AI applied to operations · Mechanical design in the food industry.",
-    },
-    ubicacion: {
-      es: "Bucaramanga / Floridablanca, Santander, Colombia.",
-      en: "Bucaramanga / Floridablanca, Santander, Colombia.",
-    },
     botonContacto: { es: "Contacto", en: "Contact" },
     botonCV: { es: "Descargar CV", en: "Download CV" },
     bio1: {
-      es: "Soy estudiante de Ingeniería Industrial en la UPB, con base previa en Ingeniería Mecánica (UIS) y experiencia en diseño de equipos y proyectos de ingeniería para la industria de alimentos.",
-      en: "I'm an Industrial Engineering student at UPB, with a prior background in Mechanical Engineering (UIS) and experience designing equipment and engineering projects for the food industry.",
+      es: "Estudio Ingeniería Industrial en la UPB. Antes hice tres años de Ingeniería Mecánica en la UIS y trabajé diseñando equipos para la industria de alimentos: primero como dibujante mecánico en IAF, luego como ingeniero de proyectos en DSM y después de forma independiente.",
+      en: "I study Industrial Engineering at UPB. Before that I did three years of Mechanical Engineering at UIS and worked designing equipment for the food industry: first as a mechanical draftsman at IAF, then as a project engineer at DSM, and then on my own.",
     },
     bio2: {
-      es: "Hoy soy Product manager de una plataforma interna de gestión que diseñé y llevé a producción, y trabajo con datos, procesos y automatización en proyectos reales — siempre con verificación humana de lo que produce la IA.",
-      en: "I'm currently Product Manager of an internal management platform I designed and shipped to production, and I work with data, processes, and automation on real projects — always with human verification of what AI produces.",
+      es: "Hoy soy Product manager de una plataforma de gestión para conjuntos residenciales que definí y llevé a producción en Proinnprot. Me muevo entre procesos, datos y automatización, y construyo con Claude Code, pero lo que sale de la IA lo reviso yo.",
+      en: "Today I'm Product Manager of a management platform for residential complexes that I defined and took to production at Proinnprot. I work across processes, data and automation, and I build with Claude Code, but I review whatever the AI produces myself.",
     },
     tituloExperiencia: { es: "Experiencia", en: "Experience" },
   },
   proyectosIngenieria: {
     titulo: { es: "Ingeniería", en: "Engineering" },
     subtitulo: {
-      es: "Diseños mecánicos reales, en 3D: arrastra para rotar y usa el scroll para acercarte.",
-      en: "Real mechanical designs, in 3D: drag to rotate and scroll to zoom.",
+      es: "Dos diseños míos en 3D. Arrastra con el mouse para rotarlos y usa la rueda para acercarte.",
+      en: "Two of my designs in 3D. Drag with the mouse to rotate them and use the wheel to zoom.",
     },
     ayudaVisor: {
-      es: "Arrastra para rotar · scroll para zoom",
-      en: "Drag to rotate · scroll to zoom",
+      es: "Arrastra para rotar · rueda para zoom",
+      en: "Drag to rotate · wheel to zoom",
     },
     avisoMuestra: {
-      es: "Modelo de muestra — el modelo real de este proyecto se conecta próximamente.",
-      en: "Sample model — the real model for this project is coming soon.",
+      es: "Modelo de muestra. El real viene después.",
+      en: "Sample model. The real one comes later.",
     },
   },
   plataformas: {
     titulo: { es: "Software", en: "Software" },
     subtitulo: {
-      es: "Aplicaciones que diseñé y desarrollé de principio a fin.",
-      en: "Applications I designed and built end to end.",
-    },
-    avisoCapturas: {
-      es: "Capturas próximamente",
-      en: "Screenshots coming soon",
+      es: "Aplicaciones que construí. Por ahora, Gestión PH.",
+      en: "Applications I've built. For now, Gestión PH.",
     },
   },
   proyectosAcademicos: {
     titulo: { es: "Proyectos académicos", en: "Academic projects" },
     subtitulo: {
-      es: "Trabajos de la universidad que llevé hasta el detalle: datos, negocio y estrategia.",
-      en: "University projects I took all the way to the detail: data, business, and strategy.",
+      es: "Trabajos de la universidad.",
+      en: "University projects.",
     },
   },
   experiencia: {
-    verMas: { es: "Ver más", en: "View more" },
+    verMas: { es: "Ver más", en: "See more" },
     cerrar: { es: "Cerrar", en: "Close" },
     fotosProximamente: {
-      es: "Fotos reales de este proyecto — próximamente.",
-      en: "Real photos of this project — coming soon.",
+      es: "Aún no tengo fotos de este proyecto.",
+      en: "No photos of this project yet.",
     },
   },
   contacto: {
     titulo: { es: "Hablemos", en: "Let's talk" },
     texto: {
-      es: "Abierto a conectar con profesionales de operaciones, tecnología e industria de alimentos — y a conversar sobre oportunidades de práctica profesional.",
-      en: "Open to connecting with professionals in operations, technology, and the food industry — and to talking about professional internship opportunities.",
+      es: "Busco prácticas profesionales para 2027, en proyectos, datos y automatización de procesos con IA. Me interesa hablar con gente de operaciones, tecnología e industria, incluida la de alimentos.",
+      en: "I'm looking for a professional internship in 2027, in projects, data and process automation with AI. I'd like to talk with people in operations, technology and industry, food included.",
     },
     correo: { es: "johan.rondon27@hotmail.com", en: "johan.rondon27@hotmail.com" },
     linkedin: { es: "LinkedIn", en: "LinkedIn" },
