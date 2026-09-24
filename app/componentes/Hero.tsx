@@ -1,5 +1,6 @@
 "use client";
 
+import TextoConEnlaces from "./TextoConEnlaces";
 import { useState } from "react";
 import Image from "next/image";
 import { motion } from "motion/react";
@@ -90,11 +91,11 @@ export default function Hero() {
 
         <RevealGrupo className="tarjeta p-7 md:p-9 mt-14 max-w-2xl text-left relative overflow-visible">
           <RevealItem as="div">
-            <p className="mb-4">{t(h.bio1, idioma)}</p>
+            <p className="mb-4"><TextoConEnlaces texto={t(h.bio1, idioma)} /></p>
           </RevealItem>
           <RevealItem as="div">
             <p className="mb-2">
-              {t(h.bio2, idioma)} <VerificacionHumana />
+              <TextoConEnlaces texto={t(h.bio2, idioma)} /> <VerificacionHumana />
             </p>
           </RevealItem>
           <Ingeniero

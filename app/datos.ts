@@ -1,5 +1,7 @@
 type Bilingue = { es: string; en: string };
 
+export type Enlace = { etiqueta: Bilingue; href: string };
+
 export type Experiencia = {
   periodo: Bilingue;
   rol: Bilingue;
@@ -7,6 +9,8 @@ export type Experiencia = {
   descripcion: Bilingue;
   proyectoId?: string;
   emoji?: string;
+  logo?: string;
+  enlaces?: Enlace[];
   detalle?: Bilingue;
   fotos?: string[];
 };
@@ -16,45 +20,45 @@ export const experiencias: Experiencia[] = [
     periodo: { es: "abr. 2021 – dic. 2022", en: "Apr 2021 – Dec 2022" },
     rol: { es: "Dibujante mecánico", en: "Mechanical Draftsman" },
     empresa: "IAF Ingeniería",
-    emoji: "📐",
-    fotos: ["/fotos/iaf.jpg"],
+    logo: "/logos/iaf.png",
+    fotos: ["/fotos/iaf-1.jpg"],
     descripcion: {
-      es: "Hice planos de fabricación y montaje, modelado 3D y renders, y apoyé compras y diseño de maquinaria.",
-      en: "I made manufacturing and assembly drawings, 3D models and renders, and helped with purchasing and machinery design.",
+      es: "Mi primera experiencia laboral. Dibujante mecánico de medio tiempo: planos de fabricación, montaje y modelos 3D de plantas de evaporación y secado.",
+      en: "My first job. Part-time mechanical draftsman: fabrication and assembly drawings and 3D models for evaporation and drying plants.",
     },
     detalle: {
-      es: "En IAF Ingeniería trabajé medio tiempo como dibujante mecánico, de abril de 2021 a diciembre de 2022. IAF hace equipos para la industria de alimentos. Yo hacía los planos de fabricación y montaje en Solid Edge, SolidWorks y AutoCAD, y modelaba en 3D y armaba renders para presentar los proyectos. También apoyaba los pedidos de materiales y el contacto con proveedores, y ayudaba en el desarrollo y diseño de la maquinaria.",
-      en: "At IAF Ingeniería I worked part-time as a mechanical draftsman, from April 2021 to December 2022. IAF makes equipment for the food industry. I made manufacturing and assembly drawings in Solid Edge, SolidWorks and AutoCAD, and did 3D models and renders to present projects. I also helped with material orders and supplier contact, and supported the development and design of the machinery.",
+      es: "IAF fue mi primera experiencia laboral. Trabajé medio tiempo como dibujante mecánico mientras estudiaba Ingeniería Mecánica en la UIS.\n\nIAF es una empresa especialista en el diseño y la fabricación de plantas de evaporación y secado. Mi trabajo era elaborar los planos de fabricación, los planos de montaje y los modelos 3D de los equipos y las plantas.\n\nUsé Solid Edge, SolidWorks y AutoCAD. También apoyé los pedidos de materiales y la gestión con proveedores.",
+      en: "IAF was my first job. I worked part-time as a mechanical draftsman while studying Mechanical Engineering at UIS.\n\nIAF specializes in the design and manufacturing of evaporation and drying plants. My job was to produce the fabrication drawings, the assembly drawings and the 3D models of the equipment and the plants.\n\nI used Solid Edge, SolidWorks and AutoCAD. I also supported material orders and supplier management.",
     },
   },
   {
     periodo: { es: "mar. – jun. 2023", en: "Mar – Jun 2023" },
     rol: { es: "Cofundador", en: "Co-founder" },
     empresa: "Always Ahead",
-    emoji: "🤝",
-    fotos: ["/fotos/always-ahead.jpg"],
+    logo: "/logos/always-ahead.png",
+    fotos: ["/fotos/always-ahead-1.jpg"],
     descripcion: {
-      es: "Cofundé una comunidad de startups de Santander con otros emprendedores. Organicé eventos y armé la red de aliados.",
-      en: "I co-founded a startup community in Santander with other entrepreneurs. I organized events and built the network of allies.",
+      es: "Iniciativa con empresarios de tecnología de la región para crear un ecosistema de empresas tech santandereanas, con eventos propios y networking.",
+      en: "An initiative with regional tech entrepreneurs to build an ecosystem of Santander tech companies, with our own events and networking.",
     },
     detalle: {
-      es: "Entre marzo y junio de 2023 fui cofundador de Always Ahead, una comunidad de startups de Santander que armamos con otros emprendedores. Yo me encargué de organizar eventos y de armar la red de contactos con aliados, entre ellos S-innova, la incubadora de la UIS. Duró poco.",
-      en: "Between March and June 2023 I was a co-founder of Always Ahead, a startup community in Santander that we built with other entrepreneurs. I organized events and built the network of contacts with allies, among them S-innova, the UIS incubator. It didn't last long.",
+      es: "Always Ahead fue una iniciativa junto con empresarios de tecnología de la región. Buscábamos crear un ecosistema de empresas de tecnología santandereanas, que conectara a esas empresas con oportunidades de crecimiento y formara una comunidad.\n\nNos inspiramos en lo que ya existe en otras regiones, como Ruta N en Medellín o lo que se ha construido en Bogotá.\n\nCon el proyecto logramos realizar eventos propios de networking, varios de los miembros asistimos a otros espacios del ecosistema y nos reunimos con instituciones como S-innova.",
+      en: "Always Ahead was an initiative with tech entrepreneurs from the region. We wanted to build an ecosystem of Santander tech companies that would connect them with growth opportunities and form a community.\n\nWe took inspiration from what already exists in other regions, like Ruta N in Medellín or what has been built in Bogotá.\n\nThrough the project we ran our own networking events, several of us attended other events in the ecosystem, and we met with institutions such as S-innova.",
     },
   },
   {
     periodo: { es: "may. 2023 – feb. 2024", en: "May 2023 – Feb 2024" },
     rol: { es: "Ingeniero de proyectos", en: "Project Engineer" },
     empresa: "DSM Latinoamérica",
-    emoji: "🏭",
-    fotos: ["/fotos/dsm.jpg"],
+    logo: "/logos/dsm.png",
+    fotos: ["/fotos/dsm-1.jpg"],
     descripcion: {
-      es: "Participé en el diseño y la construcción de un sistema CIP de 15.000 L/h y armé una herramienta de consumibles en Excel/VBA.",
-      en: "I took part in designing and building a 15,000 L/h CIP system and made a consumables tool in Excel/VBA.",
+      es: "Ingeniero de proyectos. Lideré el diseño y la fabricación de un sistema CIP de 15.000 L/h para Indulácteos y una herramienta en Excel para trazar consumibles.",
+      en: "Project engineer. I led the design and fabrication of a 15,000 L/h CIP system for Indulácteos and built an Excel tool to track consumables.",
     },
     detalle: {
-      es: "En DSM fui ingeniero de proyectos de mayo de 2023 a febrero de 2024. Participé con el equipo de ingeniería en el diseño de un sistema CIP de 15.000 L/h para Indulácteos, que lava las líneas sin desarmarlas. Hice los planos de fabricación, seguí la construcción y el ensamble desde el primer día, y armé el APU y el manual de operación. Se entregó en enero de 2024. Aparte hice en Excel/VBA una herramienta para rastrear consumibles por operario, proyecto y equipo: mostró que los de una sola máquina sumaban varios millones de pesos que nadie había cuantificado. También levanté el inventario de maquinaria y equipos de la planta.",
-      en: "At DSM I was a project engineer from May 2023 to February 2024. Together with the engineering team I helped design a 15,000 L/h CIP system for Indulácteos, which cleans the lines without taking them apart. I made the manufacturing drawings, followed construction and assembly from day one, and put together the unit-price analysis (APU) and the operation manual. It was delivered in January 2024. Separately, I built an Excel/VBA tool to track consumables by operator, project and machine: it showed that the consumables of a single machine added up to several million pesos nobody had quantified. I also took the plant's inventory of machinery and equipment.",
+      es: "DSM es una empresa especializada en el diseño y montaje de maquinaria industrial, sobre todo para la industria láctea. Allí trabajé como ingeniero de proyectos y lideré el diseño y la fabricación de un sistema CIP de 15.000 litros por hora para Indulácteos. El proyecto duró aproximadamente 4 meses.\n\nAprendí mucho sobre planos de fabricación, diseño de maquinaria industrial y gestión de proveedores. Usé Solid Edge, AutoCAD, SolidWorks, Excel y KeyShot.\n\nTambién desarrollé una herramienta en Excel programada en Visual Basic con la que la empresa pudo empezar a trazar el uso de sus consumibles. Con ella obtuvimos estadísticas en tiempo real de lo que costaban los consumibles asociados a un proyecto, a una máquina o a un proceso.\n\nAdemás levanté el inventario de la planta: herramientas, maquinaria, equipos de soldadura y elementos de protección personal. Todo se hizo de forma digital en Excel.",
+      en: "DSM specializes in the design and assembly of industrial machinery, mostly for the dairy industry. I worked there as a project engineer and led the design and fabrication of a 15,000 liters per hour CIP system for Indulácteos. The project took about 4 months.\n\nI learned a lot about fabrication drawings, industrial machinery design and supplier management. I used Solid Edge, AutoCAD, SolidWorks, Excel and KeyShot.\n\nI also built an Excel tool programmed in Visual Basic that let the company start tracking how it used its consumables. With it we got real-time numbers on what consumables cost per project, per machine or per process.\n\nI also took the plant inventory: tools, machinery, welding equipment and personal protective equipment. All of it was done digitally in Excel.",
     },
     proyectoId: "cip-indulacteos",
   },
@@ -63,14 +67,18 @@ export const experiencias: Experiencia[] = [
     rol: { es: "Colaborador en marketing y estrategia", en: "Marketing & Strategy Collaborator" },
     empresa: "Cuché Cuté",
     emoji: "🎯",
-    fotos: ["/fotos/cuche-cute.jpg"],
+    enlaces: [
+      { etiqueta: { es: "Instagram", en: "Instagram" }, href: "https://www.instagram.com/cuchecute/" },
+      { etiqueta: { es: "TikTok", en: "TikTok" }, href: "https://www.tiktok.com/@cuchecute" },
+    ],
+    fotos: ["/fotos/cuche-cute-1.jpg"],
     descripcion: {
-      es: "Colaboré con una marca de café de especialidad en prelanzamiento: estrategia, contenido de redes y tienda en Shopify.",
-      en: "I worked with a specialty coffee brand before its launch: strategy, social content and a Shopify store.",
+      es: "Café de especialidad. Aprendí marketing, identidad de marca y e-commerce, y armamos la estrategia de contenidos inicial para TikTok e Instagram.",
+      en: "Specialty coffee company. I learned marketing, brand identity and e-commerce, and we built the initial content strategy for TikTok and Instagram.",
     },
     detalle: {
-      es: "De mayo de 2025 a febrero de 2026 colaboré con Cuché Cuté, una marca de café de especialidad en prelanzamiento. Trabajé la estrategia de marca y el storytelling, y preparé el contenido de redes del primer mes: guiones y un calendario de 9 piezas. También hice el estudio de mercado y la estrategia de posicionamiento regional, y monté la tienda en línea en Shopify.",
-      en: "From May 2025 to February 2026 I worked with Cuché Cuté, a specialty coffee brand in pre-launch. I worked on the brand strategy and storytelling, and prepared the first month of social content: scripts and a calendar of 9 pieces. I also did the market study and the regional positioning strategy, and set up the online store on Shopify.",
+      es: "En Cuché Cuté, una empresa de café de especialidad, aprendí muchísimo de marketing: estrategia, identidad de marca, storytelling y creación de contenido.\n\nTambién aprendí a crear y administrar páginas web y e-commerce con herramientas como Shopify y WordPress.\n\nAllí armamos la estrategia de contenidos para los primeros meses, tanto en TikTok como en Instagram.",
+      en: "At Cuché Cuté, a specialty coffee company, I learned a great deal about marketing: strategy, brand identity, storytelling and content creation.\n\nI also learned to build and manage websites and e-commerce stores with tools like Shopify and WordPress.\n\nThere we put together the content strategy for the first months, on both TikTok and Instagram.",
     },
   },
   {
@@ -78,14 +86,14 @@ export const experiencias: Experiencia[] = [
     rol: { es: "Diseñador mecánico independiente", en: "Independent Mechanical Designer" },
     empresa: "Innovameq",
     emoji: "⚙️",
-    fotos: ["/fotos/innovameq.jpg"],
+    fotos: ["/fotos/innovameq-1.jpg"],
     descripcion: {
-      es: "Diseñé una dosificadora de tornillo sin fin en acero inoxidable para Indunilo y seguí su fabricación hasta la entrega.",
-      en: "I designed a stainless-steel screw-feeder dosing machine for Indunilo and followed its manufacturing through to delivery.",
+      es: "Independiente, finales de 2025. Lideré el diseño de una dosificadora de polvo de tornillo con tolva de 2 m³ y supervisé su construcción y entrega.",
+      en: "Freelance, late 2025. I led the design of a screw powder feeder with a 2 m³ hopper and supervised its construction and delivery.",
     },
     detalle: {
-      es: "Entre noviembre de 2025 y enero de 2026 trabajé como diseñador mecánico independiente en Innovameq. Diseñé para Indunilo una dosificadora de tornillo sin fin con tolva de 2 m³, en acero inoxidable, para pulverizar grasa vegetal, con un motorreductor sinfín-corona de 0,5 HP a 42 RPM. Hice los planos de fabricación, compré los materiales y armé el APU. Después supervisé la construcción y el ensamble hasta la entrega.",
-      en: "Between November 2025 and January 2026 I worked as an independent mechanical designer at Innovameq. For Indunilo I designed a screw-feeder dosing machine with a 2 m³ hopper, in stainless steel, to pulverize vegetable fat, driven by a 0.5 HP, 42 RPM worm-gear motor. I made the manufacturing drawings, bought the materials and put together the unit-price analysis (APU). Then I supervised construction and assembly through to delivery.",
+      es: "A finales de 2025 lideré un proyecto de diseño de una dosificadora de polvo de tipo tornillo, con tolva de 2 metros cúbicos de capacidad, para una planta de pulverización de grasa vegetal. Contaba con un motorreductor de tornillo sin fin y corona de medio caballo.\n\nMe encargué del diseño, los planos de fabricación, la gestión de proveedores, la compra de materiales y el desarrollo del APU.\n\nTambién supervisé la construcción y el ensamble, y la entrega al cliente final.",
+      en: "In late 2025 I led the design of a screw-type powder feeder with a 2 cubic meter hopper, for a vegetable fat pulverizing plant. It ran on a half-horsepower worm-gear motor reducer.\n\nI handled the design, the fabrication drawings, supplier management, material purchasing and the development of the unit price analysis (APU).\n\nI also supervised the construction and assembly, and the delivery to the end client.",
     },
     proyectoId: "dosificadora-indunilo",
   },
@@ -93,15 +101,18 @@ export const experiencias: Experiencia[] = [
     periodo: { es: "jul. 2026 – hoy", en: "Jul 2026 – present" },
     rol: { es: "Product manager", en: "Product Manager" },
     empresa: "Proinnprot SAS",
-    emoji: "🧠",
-    fotos: ["/fotos/proinnprot.png"],
+    logo: "/logos/proinnprot.png",
+    enlaces: [
+      { etiqueta: { es: "Abrir la herramienta", en: "Open the tool" }, href: "https://gestion-ph-v22z.vercel.app/" },
+    ],
+    fotos: ["/fotos/proinnprot-1.jpg"],
     descripcion: {
-      es: "Definí y lidero una plataforma a la medida que cambió los cuadernos y carpetas de una administradora de propiedad horizontal por gestión digital.",
-      en: "I defined and lead a custom platform that replaced the notebooks and paper folders of a property management company with digital management.",
+      es: "Product manager. Llevo la innovación y la integración de nuevas tecnologías, y construí una plataforma web que reemplaza cuadernos y carpetas físicas.",
+      en: "Product Manager. I lead innovation and new technology integration, and built a web platform that replaces physical notebooks and folders.",
     },
     detalle: {
-      es: "Desde julio de 2026 soy product manager en Proinnprot. Definí y lidero el desarrollo de una plataforma interna a la medida para una empresa que administra propiedad horizontal. Reemplazó los cuadernos y carpetas físicas, y hoy maneja contratos, contratistas, mantenimientos con evidencia obligatoria y llamados de atención. Los informes que antes tomaban días de armar a mano salen al instante. La usan administradores, gerentes y presidentes de consejo en varios conjuntos residenciales.",
-      en: "Since July 2026 I've been product manager at Proinnprot. I defined and lead the development of a custom internal platform for a company that manages residential property (horizontal ownership). It replaced the notebooks and paper folders, and today it handles contracts, contractors, maintenance with mandatory evidence and warning notices. Reports that used to take days to put together by hand now come out instantly. Administrators, managers and board presidents use it across several residential complexes.",
+      es: "Actualmente soy Product manager en Proinnprot. Estoy a cargo de la innovación y de la integración de nuevas tecnologías de la empresa. Proinnprot administra propiedad horizontal y tiene una fuerte presencia en Santander.\n\nUno de mis proyectos es una herramienta web de uso interno que busca reemplazar los cuadernos y carpetas físicas que hoy usan los administradores. Ha ayudado a digitalizar muchos procesos y a ahorrar tiempo: informes que antes tardaban días en armarse ahora se envían de forma automática.\n\nLa herramienta está en constante crecimiento y maneja distintos roles: administradores, gerentes, presidentes de consejo y personal operativo de los conjuntos, entre otros.",
+      en: "I'm currently a Product Manager at Proinnprot. I'm in charge of innovation and the integration of new technologies for the company. Proinnprot manages residential complexes (horizontal property) and has a strong presence in Santander.\n\nOne of my projects is an internal web tool meant to replace the physical notebooks and folders administrators use today. It has helped digitalize many processes and save time: reports that used to take days to put together are now sent automatically.\n\nThe tool keeps growing and supports several roles: administrators, managers, council presidents and on-site operating staff, among others.",
     },
     proyectoId: "gestion-ph",
   },

@@ -10,7 +10,7 @@ import SelloConstruccion from "./SelloConstruccion";
 
 // Captura y enlace en vivo por id de proyecto (solo los que ya tienen despliegue público).
 const RECURSOS_PLATAFORMAS: Record<string, { url: string; imagen: string }> = {
-  "gestion-ph": { url: "https://gestion-ph-v22z.vercel.app/", imagen: "/fotos/proinnprot.png" },
+  "gestion-ph": { url: "https://gestion-ph-v22z.vercel.app/", imagen: "/fotos/proinnprot-1.jpg" },
 };
 
 export default function PlataformasWeb() {

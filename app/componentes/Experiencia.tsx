@@ -48,7 +48,18 @@ export default function Experiencia() {
                   className="text-sm font-semibold mb-2 flex items-center gap-2"
                   style={{ color: "var(--tinta-titulo)" }}
                 >
-                  {exp.emoji && <span aria-hidden>{exp.emoji}</span>}
+                  {exp.logo ? (
+                    <Image
+                      src={exp.logo}
+                      alt=""
+                      aria-hidden="true"
+                      width={24}
+                      height={24}
+                      className="w-6 h-6 rounded-md object-contain bg-white shrink-0"
+                    />
+                  ) : (
+                    exp.emoji && <span aria-hidden>{exp.emoji}</span>
+                  )}
                   <span>
                     {t(exp.rol, idioma)} · {exp.empresa}
                   </span>

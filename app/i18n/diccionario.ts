@@ -13,12 +13,12 @@ export const diccionario = {
     botonContacto: { es: "Contacto", en: "Contact" },
     botonCV: { es: "Descargar CV", en: "Download CV" },
     bio1: {
-      es: "Estudio Ingeniería Industrial en la UPB. Antes hice tres años de Ingeniería Mecánica en la UIS y trabajé diseñando equipos para la industria de alimentos: primero como dibujante mecánico en IAF, luego como ingeniero de proyectos en DSM y después de forma independiente.",
-      en: "I study Industrial Engineering at UPB. Before that I did three years of Mechanical Engineering at UIS and worked designing equipment for the food industry: first as a mechanical draftsman at IAF, then as a project engineer at DSM, and then on my own.",
+      es: "Soy estudiante de Ingeniería Industrial en la UPB. Antes cursé tres años de Ingeniería Mecánica en la UIS y trabajé diseñando equipos para la industria de alimentos: primero como dibujante mecánico en IAF, luego como ingeniero de proyectos en DSM y después de forma independiente.",
+      en: "I'm an Industrial Engineering student at UPB. Before that I spent three years in Mechanical Engineering at UIS and worked designing equipment for the food industry: first as a mechanical draftsman at IAF, then as a project engineer at DSM, and later on my own.",
     },
     bio2: {
-      es: "Hoy soy Product manager de una plataforma de gestión para conjuntos residenciales que definí y llevé a producción en Proinnprot. Me muevo entre procesos, datos y automatización, y construyo con Claude Code, pero lo que sale de la IA lo reviso yo.",
-      en: "Today I'm Product Manager of a management platform for residential complexes that I defined and took to production at Proinnprot. I work across processes, data and automation, and I build with Claude Code, but I review whatever the AI produces myself.",
+      es: "Hoy soy Product manager en Proinnprot, donde definí y llevé a producción una plataforma de gestión para conjuntos residenciales. Me muevo entre procesos, datos y automatización, y construyo con Claude Code, pero todo lo que sale de la IA lo reviso yo. En 2027 busco prácticas profesionales donde pueda llevar eso a una operación real.",
+      en: "Today I'm a Product Manager at Proinnprot, where I defined and took to production a management platform for residential complexes. I work across processes, data and automation, and I build with Claude Code, but I review everything the AI produces. In 2027 I'm looking for a professional internship where I can bring that into a real operation.",
     },
     tituloExperiencia: { es: "Experiencia", en: "Experience" },
   },

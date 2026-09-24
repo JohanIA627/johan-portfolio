@@ -4,6 +4,7 @@ import { useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { diccionario } from "../i18n/diccionario";
 import { t, useIdioma } from "../i18n/contexto";
+import { useBloquearScroll } from "./useBloquearScroll";
 
 type Props = { abierto: boolean; onCerrar: () => void };
 
@@ -13,6 +14,8 @@ export default function ContactoModal({ abierto, onCerrar }: Props) {
   const panelRef = useRef<HTMLDivElement>(null);
   const disparadorRef = useRef<HTMLElement | null>(null);
   const tituloId = "contacto-modal-titulo";
+
+  useBloquearScroll(abierto);
 
   useEffect(() => {
     if (!abierto) return;

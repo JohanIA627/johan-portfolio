@@ -6,6 +6,8 @@ import { diccionario } from "../i18n/diccionario";
 import { t, useIdioma } from "../i18n/contexto";
 import type { Experiencia as ExperienciaTipo } from "../datos";
 import SelloConstruccion from "./SelloConstruccion";
+import TextoConEnlaces from "./TextoConEnlaces";
+import { useBloquearScroll } from "./useBloquearScroll";
 
 type Props = {
   experiencia: ExperienciaTipo | null;
@@ -18,6 +20,8 @@ export default function ExperienciaModal({ experiencia, onCerrar }: Props) {
   const panelRef = useRef<HTMLDivElement>(null);
   const disparadorRef = useRef<HTMLElement | null>(null);
   const tituloId = "experiencia-modal-titulo";
+
+  useBloquearScroll(experiencia !== null);
 
   useEffect(() => {
     if (!experiencia) return;
@@ -92,24 +96,64 @@ export default function ExperienciaModal({ experiencia, onCerrar }: Props) {
               className="text-lg font-semibold mb-4 pr-6"
               style={{ color: "var(--tinta-titulo)" }}
             >
-              {experiencia.emoji && <span aria-hidden>{experiencia.emoji} </span>}
-              {t(experiencia.rol, idioma)} · {experiencia.empresa}
-            </h3>
-
-            <p className="text-sm mb-6" style={{ color: "var(--tinta)" }}>
-              {t(experiencia.detalle ?? experiencia.descripcion, idioma)}
-            </p>
-
-            {experiencia.fotos?.[0] ? (
-              <div className="relative rounded-[var(--r-medio)] overflow-hidden">
+              {experiencia.logo ? (
                 <img
-                  src={experiencia.fotos[0]}
+                  src={experiencia.logo}
                   alt=""
                   aria-hidden="true"
-                  loading="lazy"
-                  className="w-full h-48 object-cover"
+                  className="inline-block w-7 h-7 rounded-md object-contain bg-white align-middle mr-2"
                 />
-                <SelloConstruccion />
+              ) : (
+                experiencia.emoji && <span aria-hidden>{experiencia.emoji} </span>
+              )}
+              <TextoConEnlaces texto={`${t(experiencia.rol, idioma)} · ${experiencia.empresa}`} />
+            </h3>
+
+            <div className="text-sm mb-6 flex flex-col gap-3" style={{ color: "var(--tinta)" }}>
+              {t(experiencia.detalle ?? experiencia.descripcion, idioma)
+                .split("\n\n")
+                .map((parrafo, i) => (
+                  <p key={i}>
+                    <TextoConEnlaces texto={parrafo} />
+                  </p>
+                ))}
+            </div>
+
+            {experiencia.enlaces && (
+              <div className="flex flex-wrap gap-2 mb-6">
+                {experiencia.enlaces.map((e) => (
+                  <a
+                    key={e.href}
+                    className="boton secundario"
+                    href={e.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    {t(e.etiqueta, idioma)} ↗
+                  </a>
+                ))}
+              </div>
+            )}
+
+            {experiencia.fotos && experiencia.fotos.length > 0 ? (
+              <div className={experiencia.fotos.length > 1 ? "grid grid-cols-2 gap-2" : ""}>
+                {experiencia.fotos.map((foto, i) => (
+                  <div
+                    key={foto}
+                    className={`relative rounded-[var(--r-medio)] overflow-hidden ${
+                      i === 0 && experiencia.fotos!.length > 1 ? "col-span-2" : ""
+                    }`}
+                  >
+                    <img
+                      src={foto}
+                      alt=""
+                      aria-hidden="true"
+                      loading="lazy"
+                      className={`w-full object-cover ${i === 0 ? "h-48" : "h-32"}`}
+                    />
+                    <SelloConstruccion />
+                  </div>
+                ))}
               </div>
             ) : (
               <div
