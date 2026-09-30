@@ -7,7 +7,6 @@ import { motion } from "motion/react";
 import { diccionario } from "../i18n/diccionario";
 import { t, useIdioma } from "../i18n/contexto";
 import { RevealGrupo, RevealItem } from "./RevealGrupo";
-import VerificacionHumana from "./iconos/VerificacionHumana";
 import Experiencia from "./Experiencia";
 import ContactoModal from "./ContactoModal";
 import Ingeniero from "./mascota/Ingeniero";
@@ -95,7 +94,7 @@ export default function Hero() {
           </RevealItem>
           <RevealItem as="div">
             <p className="mb-2">
-              <TextoConEnlaces texto={t(h.bio2, idioma)} /> <VerificacionHumana />
+              <TextoConEnlaces texto={t(h.bio2, idioma)} />
             </p>
           </RevealItem>
           <Ingeniero
