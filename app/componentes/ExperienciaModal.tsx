@@ -6,6 +6,7 @@ import { diccionario } from "../i18n/diccionario";
 import { t, useIdioma } from "../i18n/contexto";
 import type { Experiencia as ExperienciaTipo } from "../datos";
 import TextoConEnlaces from "./TextoConEnlaces";
+import Galeria from "./Galeria";
 import { useBloquearScroll } from "./useBloquearScroll";
 
 type Props = {
@@ -135,25 +136,7 @@ export default function ExperienciaModal({ experiencia, onCerrar }: Props) {
             )}
 
             {experiencia.fotos && experiencia.fotos.length > 0 ? (
-              <div className={experiencia.fotos.length > 1 ? "grid grid-cols-2 gap-2" : ""}>
-                {experiencia.fotos.map((foto, i) => (
-                  <div
-                    key={foto}
-                    className={`relative rounded-[var(--r-medio)] overflow-hidden ${
-                      i === 0 && experiencia.fotos!.length > 1 ? "col-span-2" : ""
-                    }`}
-                  >
-                    <img
-                      src={foto}
-                      alt=""
-                      aria-hidden="true"
-                      loading="lazy"
-                      decoding="async"
-                      className={`w-full object-cover ${i === 0 ? "h-48" : "h-32"}`}
-                    />
-                  </div>
-                ))}
-              </div>
+              <Galeria fotos={experiencia.fotos} />
             ) : (
               <div
                 className="rounded-[var(--r-medio)] flex flex-col items-center justify-center gap-2 py-8"

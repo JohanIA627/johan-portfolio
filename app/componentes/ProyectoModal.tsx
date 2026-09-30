@@ -6,6 +6,7 @@ import { diccionario } from "../i18n/diccionario";
 import { t, useIdioma } from "../i18n/contexto";
 import type { Proyecto } from "../datos";
 import { useBloquearScroll } from "./useBloquearScroll";
+import Galeria from "./Galeria";
 
 // Ventana de un proyecto con fotos reales (hoy solo Mermelatte). Mismo
 // comportamiento que ExperienciaModal: bloquea el scroll del fondo, atrapa el
@@ -106,39 +107,12 @@ export default function ProyectoModal({ proyecto, onCerrar }: Props) {
               {t(proyecto.descripcion, idioma)}
             </p>
 
-            {proyecto.video && (
-              <video
-                src={proyecto.video}
-                poster="/fotos/mermelatte-video.jpg"
-                controls
-                loop
-                muted
-                playsInline
-                preload="none"
-                className="w-full rounded-[var(--r-medio)] mb-2"
-              />
-            )}
-
             {proyecto.fotos && proyecto.fotos.length > 0 && (
-              <div className={proyecto.fotos.length > 1 ? "grid grid-cols-2 gap-2" : ""}>
-                {proyecto.fotos.map((foto, i) => (
-                  <div
-                    key={foto}
-                    className={`rounded-[var(--r-medio)] overflow-hidden ${
-                      i === 0 && proyecto.fotos!.length > 1 ? "col-span-2" : ""
-                    }`}
-                  >
-                    <img
-                      src={foto}
-                      alt=""
-                      aria-hidden="true"
-                      loading="lazy"
-                      decoding="async"
-                      className={`w-full object-cover ${i === 0 ? "h-48" : "h-32"}`}
-                    />
-                  </div>
-                ))}
-              </div>
+              <Galeria
+                fotos={proyecto.fotos}
+                video={proyecto.video}
+                poster="/fotos/mermelatte-video.jpg"
+              />
             )}
           </motion.div>
         </motion.div>
