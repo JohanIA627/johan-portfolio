@@ -39,10 +39,6 @@ export const diccionario = {
   },
   plataformas: {
     titulo: { es: "Software", en: "Software" },
-    subtitulo: {
-      es: "Aplicaciones que construí. Por ahora, Gestión PH.",
-      en: "Applications I've built. For now, Gestión PH.",
-    },
   },
   proyectosAcademicos: {
     titulo: { es: "Proyectos académicos", en: "Academic projects" },

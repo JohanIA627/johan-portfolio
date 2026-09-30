@@ -138,7 +138,7 @@ export const proyectos: Proyecto[] = [
     categoria: "ingenieria",
     modelo3d: "/models/cip.glb",
     titulo: { es: "Sistema CIP de 15.000 L/h", en: "15,000 L/h CIP System" },
-    contexto: { es: "DSM Latinoamérica, para Indulácteos", en: "DSM Latinoamérica, for Indulácteos" },
+    contexto: { es: "DSM Latinoamérica", en: "DSM Latinoamérica" },
     descripcion: {
       es: "Sistema de lavado automático de líneas (Clean-In-Place) para un cliente lácteo, que lava sin desarmar nada. Participé en el diseño con el equipo de ingeniería, hice los planos de fabricación y seguí la construcción y el ensamble desde el día 1 hasta la entrega, en enero de 2024. También armé el APU y el manual de operación.",
       en: "Automatic Clean-In-Place system for a dairy client, which cleans the lines without taking anything apart. I took part in the design with the engineering team, made the manufacturing drawings, and followed construction and assembly from day 1 to delivery, in January 2024. I also put together the unit price analysis and the operation manual.",
@@ -154,7 +154,7 @@ export const proyectos: Proyecto[] = [
     categoria: "ingenieria",
     modelo3d: "/models/dosificadora.glb",
     titulo: { es: "Dosificadora de tornillo sin fin de 2 m³", en: "2 m³ Screw-Feeder Doser" },
-    contexto: { es: "Innovameq, para Indunilo", en: "Innovameq, for Indunilo" },
+    contexto: { es: "Innovameq", en: "Innovameq" },
     descripcion: {
       es: "Equipo en acero inoxidable para pulverizar grasa vegetal, con tolva de 2 m³ y tornillo sin fin movido por un motorreductor sinfín-corona de 0,5 HP a 42 RPM. Como independiente diseñé el equipo, hice los planos de fabricación y supervisé la construcción y el ensamble hasta la entrega.",
       en: "Stainless steel equipment for pulverizing vegetable fat, with a 2 m³ hopper and a screw feeder driven by a 0.5 HP worm-gear motor at 42 RPM. Working as an independent, I designed the equipment, made the manufacturing drawings, and supervised construction and assembly through delivery.",

@@ -6,11 +6,10 @@ import { t, useIdioma } from "../i18n/contexto";
 import Reveal from "./Reveal";
 import GrafoNodos from "./iconos/GrafoNodos";
 import Ingeniero from "./mascota/Ingeniero";
-import SelloConstruccion from "./SelloConstruccion";
 
 // Captura y enlace en vivo por id de proyecto (solo los que ya tienen despliegue público).
 const RECURSOS_PLATAFORMAS: Record<string, { url: string; imagen: string }> = {
-  "gestion-ph": { url: "https://gestion-ph-v22z.vercel.app/", imagen: "/fotos/proinnprot-1.jpg" },
+  "gestion-ph": { url: "https://gestion-ph-v22z.vercel.app/", imagen: "/fotos/gestion-ph.webp" },
 };
 
 export default function PlataformasWeb() {
@@ -22,16 +21,10 @@ export default function PlataformasWeb() {
     <section id="plataformas" className="py-14 md:py-20" style={{ background: "var(--papel)" }}>
       <div className="contenedor relative">
         <Reveal>
-          <h2 className="text-2xl font-bold mb-2" style={{ fontFamily: "var(--font-firma), cursive" }}>
+          <h2 className="text-2xl font-bold mb-10" style={{ fontFamily: "var(--font-firma), cursive" }}>
             <span aria-hidden>💻 </span>
             {t(d.titulo, idioma)}
           </h2>
-          <p
-            className="mb-10 text-lg"
-            style={{ fontFamily: "var(--font-firma), cursive", color: "var(--tinta)" }}
-          >
-            {t(d.subtitulo, idioma)}
-          </p>
         </Reveal>
         <Ingeniero
           pose="laptop"
@@ -45,22 +38,16 @@ export default function PlataformasWeb() {
                 className="flex flex-col md:flex-row gap-6 md:gap-10 items-start py-8 scroll-mt-24"
                 style={{ borderTop: i === 0 ? "none" : "1px solid var(--borde)" }}
               >
-                <span
-                  className="dato text-sm tenue shrink-0 hidden md:block"
-                  style={{ width: 28 }}
-                >
-                  {String(i + 1).padStart(2, "0")}
-                </span>
                 <div
                   className="relative shrink-0 rounded-[var(--r-grande)] overflow-hidden"
                   style={{
                     width: "100%",
-                    maxWidth: 260,
-                    height: 160,
+                    maxWidth: 420,
+                    aspectRatio: "1833 / 892",
+                    background: "var(--fondo)",
                     boxShadow: "var(--sombra)",
                   }}
                 >
-                  <SelloConstruccion />
                   {(() => {
                     const recurso = RECURSOS_PLATAFORMAS[p.id];
                     const nombreProyecto = t(p.titulo, idioma);
@@ -78,9 +65,11 @@ export default function PlataformasWeb() {
                         <img
                           src={recurso.imagen}
                           alt={nombreProyecto}
-                          width={260}
-                          height={160}
-                          className="w-full h-full object-cover"
+                          width={1833}
+                          height={892}
+                          loading="lazy"
+                          decoding="async"
+                          className="w-full h-full object-contain"
                         />
                       </a>
                     );
@@ -117,17 +106,6 @@ export default function PlataformasWeb() {
                       >
                         {t(p.estado, idioma)}
                       </span>
-                    )}
-                    {RECURSOS_PLATAFORMAS[p.id] && (
-                      <a
-                        href={RECURSOS_PLATAFORMAS[p.id].url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="dato text-[11px] underline underline-offset-2"
-                        style={{ color: "var(--acento)" }}
-                      >
-                        {RECURSOS_PLATAFORMAS[p.id].url.replace(/^https?:\/\//, "").replace(/\/$/, "")}
-                      </a>
                     )}
                   </div>
                 </div>
