@@ -11,7 +11,7 @@ export default function SelloConstruccion({ className }: { className?: string })
   return (
     <div className={`absolute inset-0 pointer-events-none ${className ?? ""}`} aria-hidden="true">
       <CintaPeligro className="absolute inset-0 w-full h-full" />
-      <Ingeniero pose="plano" className="absolute bottom-0 left-2 w-14 h-16" />
+      <Ingeniero pose="cono" className="absolute bottom-0 left-2 w-14 h-16" />
     </div>
   );
 }

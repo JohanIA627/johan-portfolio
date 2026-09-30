@@ -99,7 +99,7 @@ export default function Hero() {
             </p>
           </RevealItem>
           <Ingeniero
-            pose="engranaje"
+            pose="ladrillos"
             className="w-[140px] h-[160px] mx-auto mt-6 md:absolute md:mt-0 md:top-full md:right-6 md:-translate-y-4"
           />
         </RevealGrupo>

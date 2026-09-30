@@ -28,7 +28,7 @@ export default function ProyectosAcademicos() {
           </p>
         </Reveal>
         <Ingeniero
-          pose="diploma"
+          pose="birrete"
           className="hidden md:block absolute top-0 right-0 w-[144px] h-[168px]"
         />
         <div className="grid md:grid-cols-2 gap-6">
