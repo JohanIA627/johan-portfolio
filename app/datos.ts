@@ -86,7 +86,7 @@ export const experiencias: Experiencia[] = [
     rol: { es: "Diseñador mecánico independiente", en: "Independent Mechanical Designer" },
     empresa: "Innovameq",
     emoji: "⚙️",
-    fotos: ["/fotos/innovameq-01.jpg"],
+    fotos: ["/fotos/innovameq-01.jpg", "/fotos/innovameq-02.jpg", "/fotos/innovameq-03.jpg", "/fotos/innovameq-04.jpg", "/fotos/innovameq-05.jpg", "/fotos/innovameq-06.jpg", "/fotos/innovameq-07.jpg", "/fotos/innovameq-08.jpg", "/fotos/innovameq-09.jpg", "/fotos/innovameq-10.jpg", "/fotos/innovameq-11.jpg"],
     descripcion: {
       es: "Independiente, finales de 2025. Lideré el diseño de una dosificadora de polvo de tornillo con tolva de 2 m³ y supervisé su construcción y entrega.",
       en: "Freelance, late 2025. I led the design of a screw powder feeder with a 2 m³ hopper and supervised its construction and delivery.",
