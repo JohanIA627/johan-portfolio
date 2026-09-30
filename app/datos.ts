@@ -21,7 +21,7 @@ export const experiencias: Experiencia[] = [
     rol: { es: "Dibujante mecánico", en: "Mechanical Draftsman" },
     empresa: "IAF Ingeniería",
     logo: "/logos/iaf.png",
-    fotos: ["/fotos/iaf-1.jpg"],
+    fotos: ["/fotos/iaf-01.jpg", "/fotos/iaf-02.jpg", "/fotos/iaf-03.jpg", "/fotos/iaf-04.jpg", "/fotos/iaf-05.jpg", "/fotos/iaf-06.jpg", "/fotos/iaf-07.jpg", "/fotos/iaf-08.jpg", "/fotos/iaf-09.jpg"],
     descripcion: {
       es: "Mi primera experiencia laboral. Dibujante mecánico de medio tiempo: planos de fabricación, montaje y modelos 3D de plantas de evaporación y secado.",
       en: "My first job. Part-time mechanical draftsman: fabrication and assembly drawings and 3D models for evaporation and drying plants.",
@@ -36,7 +36,7 @@ export const experiencias: Experiencia[] = [
     rol: { es: "Cofundador", en: "Co-founder" },
     empresa: "Always Ahead",
     logo: "/logos/always-ahead.png",
-    fotos: ["/fotos/always-ahead-1.jpg"],
+    fotos: ["/fotos/always-ahead-01.jpg", "/fotos/always-ahead-02.jpg", "/fotos/always-ahead-03.jpg", "/fotos/always-ahead-04.jpg", "/fotos/always-ahead-05.jpg"],
     descripcion: {
       es: "Iniciativa con empresarios de tecnología de la región para crear un ecosistema de empresas tech santandereanas, con eventos propios y networking.",
       en: "An initiative with regional tech entrepreneurs to build an ecosystem of Santander tech companies, with our own events and networking.",
@@ -51,7 +51,7 @@ export const experiencias: Experiencia[] = [
     rol: { es: "Ingeniero de proyectos", en: "Project Engineer" },
     empresa: "DSM Latinoamérica",
     logo: "/logos/dsm.png",
-    fotos: ["/fotos/dsm-1.jpg"],
+    fotos: ["/fotos/dsm-01.jpg", "/fotos/dsm-02.jpg", "/fotos/dsm-03.jpg", "/fotos/dsm-04.jpg", "/fotos/dsm-05.jpg", "/fotos/dsm-06.jpg", "/fotos/dsm-07.jpg", "/fotos/dsm-08.jpg", "/fotos/dsm-09.jpg", "/fotos/dsm-10.jpg", "/fotos/dsm-11.jpg", "/fotos/dsm-12.jpg", "/fotos/dsm-13.jpg", "/fotos/dsm-14.jpg", "/fotos/dsm-15.jpg", "/fotos/dsm-16.jpg", "/fotos/dsm-17.jpg"],
     descripcion: {
       es: "Ingeniero de proyectos. Lideré el diseño y la fabricación de un sistema CIP de 15.000 L/h para Indulácteos y una herramienta en Excel para trazar consumibles.",
       en: "Project engineer. I led the design and fabrication of a 15,000 L/h CIP system for Indulácteos and built an Excel tool to track consumables.",
@@ -71,7 +71,7 @@ export const experiencias: Experiencia[] = [
       { etiqueta: { es: "Instagram", en: "Instagram" }, href: "https://www.instagram.com/cuchecute/" },
       { etiqueta: { es: "TikTok", en: "TikTok" }, href: "https://www.tiktok.com/@cuchecute" },
     ],
-    fotos: ["/fotos/cuche-cute-1.jpg"],
+    fotos: ["/fotos/cuche-cute-01.jpg", "/fotos/cuche-cute-02.jpg", "/fotos/cuche-cute-03.jpg", "/fotos/cuche-cute-04.jpg", "/fotos/cuche-cute-05.jpg", "/fotos/cuche-cute-06.jpg", "/fotos/cuche-cute-07.jpg", "/fotos/cuche-cute-08.jpg", "/fotos/cuche-cute-09.jpg"],
     descripcion: {
       es: "Café de especialidad. Aprendí marketing, identidad de marca y e-commerce, y armamos la estrategia de contenidos inicial para TikTok e Instagram.",
       en: "Specialty coffee company. I learned marketing, brand identity and e-commerce, and we built the initial content strategy for TikTok and Instagram.",
@@ -86,7 +86,7 @@ export const experiencias: Experiencia[] = [
     rol: { es: "Diseñador mecánico independiente", en: "Independent Mechanical Designer" },
     empresa: "Innovameq",
     emoji: "⚙️",
-    fotos: ["/fotos/innovameq-1.jpg"],
+    fotos: ["/fotos/innovameq-01.jpg"],
     descripcion: {
       es: "Independiente, finales de 2025. Lideré el diseño de una dosificadora de polvo de tornillo con tolva de 2 m³ y supervisé su construcción y entrega.",
       en: "Freelance, late 2025. I led the design of a screw powder feeder with a 2 m³ hopper and supervised its construction and delivery.",
@@ -105,7 +105,7 @@ export const experiencias: Experiencia[] = [
     enlaces: [
       { etiqueta: { es: "Abrir la herramienta", en: "Open the tool" }, href: "https://gestion-ph-v22z.vercel.app/" },
     ],
-    fotos: ["/fotos/proinnprot-1.jpg"],
+    fotos: ["/fotos/proinnprot-01.jpg"],
     descripcion: {
       es: "Product manager. Llevo la innovación y la integración de nuevas tecnologías, y construí una plataforma web que reemplaza cuadernos y carpetas físicas.",
       en: "Product Manager. I lead innovation and new technology integration, and built a web platform that replaces physical notebooks and folders.",
@@ -128,6 +128,8 @@ export type Proyecto = {
   estado?: Bilingue;
   emoji?: string;
   modelo3d?: string;
+  fotos?: string[];
+  video?: string;
 };
 
 export const proyectos: Proyecto[] = [
@@ -225,6 +227,8 @@ export const proyectos: Proyecto[] = [
       { es: "Estudio de mercado", en: "Market research" },
       { es: "Evaluación financiera", en: "Financial evaluation" },
     ],
+    fotos: ["/fotos/mermelatte-01.jpg", "/fotos/mermelatte-02.jpg", "/fotos/mermelatte-03.jpg", "/fotos/mermelatte-04.jpg"],
+    video: "/videos/mermelatte.mp4",
     estado: {
       es: "🏆 1er puesto, Jornada de Investigación Formativa de Ing. Industrial UPB (28 oct. 2025)",
       en: "🏆 1st place, UPB Industrial Engineering Formative Research Day (Oct 28, 2025)",

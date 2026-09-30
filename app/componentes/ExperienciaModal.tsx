@@ -5,7 +5,6 @@ import { AnimatePresence, motion } from "motion/react";
 import { diccionario } from "../i18n/diccionario";
 import { t, useIdioma } from "../i18n/contexto";
 import type { Experiencia as ExperienciaTipo } from "../datos";
-import SelloConstruccion from "./SelloConstruccion";
 import TextoConEnlaces from "./TextoConEnlaces";
 import { useBloquearScroll } from "./useBloquearScroll";
 
@@ -149,9 +148,9 @@ export default function ExperienciaModal({ experiencia, onCerrar }: Props) {
                       alt=""
                       aria-hidden="true"
                       loading="lazy"
+                      decoding="async"
                       className={`w-full object-cover ${i === 0 ? "h-48" : "h-32"}`}
                     />
-                    <SelloConstruccion />
                   </div>
                 ))}
               </div>

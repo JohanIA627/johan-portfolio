@@ -50,6 +50,7 @@ export const diccionario = {
       es: "Trabajos de la universidad.",
       en: "University projects.",
     },
+    verFotos: { es: "Ver fotos", en: "See photos" },
   },
   experiencia: {
     verMas: { es: "Ver más", en: "See more" },
