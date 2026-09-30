@@ -13,8 +13,8 @@ export const diccionario = {
     botonContacto: { es: "Contacto", en: "Contact" },
     botonCV: { es: "Descargar CV", en: "Download CV" },
     bio1: {
-      es: "Soy estudiante de Ingeniería Industrial en la UPB. Antes cursé tres años de Ingeniería Mecánica en la UIS y trabajé diseñando equipos para la industria de alimentos: primero como dibujante mecánico en IAF, luego como ingeniero de proyectos en DSM y después de forma independiente.",
-      en: "I'm an Industrial Engineering student at UPB. Before that I spent three years in Mechanical Engineering at UIS and worked designing equipment for the food industry: first as a mechanical draftsman at IAF, then as a project engineer at DSM, and later on my own.",
+      es: "Soy estudiante de Ingeniería Industrial en la UPB. **En busca de práctica 2027‑1.** Antes cursé tres años de Ingeniería Mecánica en la UIS y trabajé diseñando equipos para la industria de alimentos: primero como dibujante mecánico en IAF, luego como ingeniero de proyectos en DSM y después de forma independiente.",
+      en: "I'm an Industrial Engineering student at UPB. **Looking for an internship for the first half of 2027.** Before that I spent three years in Mechanical Engineering at UIS and worked designing equipment for the food industry: first as a mechanical draftsman at IAF, then as a project engineer at DSM, and later on my own.",
     },
     bio2: {
       es: "Me encanta aprender y soy autodidacta. Me mueven la tecnología y la innovación, sobre todo ver cómo la tecnología puede impactar de forma positiva a una empresa, incluso en un sector tradicional.",
