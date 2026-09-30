@@ -16,19 +16,21 @@ import Tractor from "./iconos/Tractor";
 // 2. El tractor va en su propio SVG de tamaño fijo. Dentro de un SVG a lo
 //    ancho con preserveAspectRatio="none" se deformaría distinto en cada
 //    pantalla: estirado en escritorio y aplastado en móvil.
-const DURACION = 5;
-// El tractor se dibuja en 40×40 y se muestra un poco más grande para que se
-// note. Como la línea está en top: 32, el SVG sube 32 × (ESCALA − 1) para que
-// las llantas sigan apoyadas en ella.
-const ESCALA = 1.3;
-const LINEA = 32;
+const DURACION = 10;
+// El tractor se dibuja en 40×40 y se muestra más grande. Ocupa 31 unidades de
+// alto (de y=1 a y=32), así que la franja mide justo eso por la escala y la
+// línea va al fondo: las llantas quedan apoyadas y el tractor no se sale por
+// arriba a invadir la sección anterior.
+const ESCALA = 2.6;
+const ALTO = Math.round(32 * ESCALA) + 2;
+const LINEA = ALTO - 2;
 
 export default function SeparadorProceso() {
   return (
     <motion.div
       aria-hidden
       className="relative w-full"
-      style={{ margin: "24px 0", height: 40 }}
+      style={{ margin: "8px 0", height: ALTO }}
       initial="oculto"
       whileInView="visible"
       viewport={{ amount: 0.6 }}
@@ -59,7 +61,7 @@ export default function SeparadorProceso() {
           visible: {
             opacity: [0, 1, 1, 0],
             left: ["-8%", "45%", "95%", "104%"],
-            transition: { duration: DURACION, ease: "linear" },
+            transition: { duration: DURACION, ease: "linear", repeat: Infinity },
           },
         }}
       >

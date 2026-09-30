@@ -11,6 +11,9 @@ import { motion } from "motion/react";
 const RADIO_TRASERA = 9;
 const RADIO_DELANTERA = 5.5;
 const VUELTAS = 4;
+// Mismo tiempo que el recorrido del separador, y en bucle: las llantas
+// arrancan y vuelven a empezar junto con el tractor.
+const DURACION = 10;
 
 function Llanta({ cx, cy, radio, vueltas }: { cx: number; cy: number; radio: number; vueltas: number }) {
   return (
@@ -18,7 +21,10 @@ function Llanta({ cx, cy, radio, vueltas }: { cx: number; cy: number; radio: num
       style={{ transformOrigin: `${cx}px ${cy}px` }}
       variants={{
         oculto: { rotate: 0 },
-        visible: { rotate: 360 * vueltas, transition: { duration: 5, ease: "linear" } },
+        visible: {
+          rotate: 360 * vueltas,
+          transition: { duration: DURACION, ease: "linear", repeat: Infinity },
+        },
       }}
     >
       <circle cx={cx} cy={cy} r={radio} fill="var(--tinta-titulo)" />
