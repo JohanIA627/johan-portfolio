@@ -4,7 +4,6 @@ import { proyectos } from "../datos";
 import { diccionario } from "../i18n/diccionario";
 import { t, useIdioma } from "../i18n/contexto";
 import Reveal from "./Reveal";
-import GrafoNodos from "./iconos/GrafoNodos";
 import Ingeniero from "./mascota/Ingeniero";
 
 // Captura y enlace en vivo por id de proyecto (solo los que ya tienen despliegue público).
@@ -79,35 +78,9 @@ export default function PlataformasWeb() {
                   <h3 className="text-lg font-semibold mb-2" style={{ color: "var(--tinta-titulo)" }}>
                     {t(p.titulo, idioma)}
                   </h3>
-                  <p className="text-sm mb-3" style={{ color: "var(--tinta)" }}>
+                  <p className="text-sm" style={{ color: "var(--tinta)" }}>
                     {t(p.descripcion, idioma)}
                   </p>
-                  <div className="flex flex-wrap gap-3 items-center">
-                    <p className="dato text-[11px] tenue flex flex-wrap items-center gap-x-1">
-                      {p.stack.map((s, si) => {
-                        const texto = t(s, idioma);
-                        return (
-                          <span key={si} className="inline-flex items-center gap-1">
-                            {si > 0 && <span aria-hidden>·</span>}
-                            {texto}
-                            {texto === "n8n" && <GrafoNodos />}
-                          </span>
-                        );
-                      })}
-                    </p>
-                    {p.estado && (
-                      <span
-                        className="dato text-[11px] px-2.5 py-0.5 rounded-full"
-                        style={{
-                          background: "var(--fondo)",
-                          color: "var(--acento)",
-                          border: "1px solid var(--borde)",
-                        }}
-                      >
-                        {t(p.estado, idioma)}
-                      </span>
-                    )}
-                  </div>
                 </div>
               </article>
             </Reveal>
